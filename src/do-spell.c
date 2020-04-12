@@ -5859,7 +5859,7 @@ static cptr do_daemon_spell(int spell, int mode)
 		if (desc) return _("地獄のボルトもしくはビームを放つ。", "Fires a bolt or beam of nether.");
     
 		{
-			int dice = 6 + (plev - 5) / 4;
+			int dice = 12 + (plev - 5) / 2;
 			int sides = 8;
 
 			if (info) return info_damage(dice, sides, 0);
@@ -6023,7 +6023,7 @@ static cptr do_daemon_spell(int spell, int mode)
 		if (desc) return _("大きな地獄の球を放つ。", "Fires a huge ball of nether.");
     
 		{
-			int dam = plev * 3 / 2 + 100;
+			int dam = plev * 3 + 200;
 			int rad = plev / 20 + 2;
 
 			if (info) return info_damage(0, 0, dam);
@@ -6193,7 +6193,7 @@ static cptr do_daemon_spell(int spell, int mode)
 		if (desc) return _("因果混乱の球を放つ。", "Fires a ball of nexus.");
     
 		{
-			int dam = 100 + plev * 2;
+			int dam = 200 + plev * 2;
 			int rad = 4;
 
 			if (info) return info_damage(0, 0, dam);
@@ -6308,7 +6308,7 @@ static cptr do_daemon_spell(int spell, int mode)
 		if (desc) return _("超巨大な地獄の球を放つ。", "Generate a huge ball of nether.");
     
 		{
-			int dam = plev * 15;
+			int dam = plev * 20;
 			int rad = plev / 5;
 
 			if (info) return info_damage(0, 0, dam);
