@@ -44,10 +44,10 @@ Q:33:T:この仕事はあなたには難しかったようですね。
 
 # The Monsters
 # Fang, Farmer Maggot's dog (level:2, Speed:120, XP:30, #:6) *Monster food*
-F:c:FLOOR:8:c55
+#F:c:FLOOR:8:c55
 
 # Freesia (level:2, Speed:120, XP:33, #:6) *Monster food*
-F:f:FLOOR:8:c57
+#F:f:FLOOR:8:c57
 
 # It (level:24, Speed:110, XP:400, #:3)
 F:I:FLOOR:8:c393
@@ -109,12 +109,15 @@ F:C:DARK_PIT:1
 # *HEALING* potion
 F:Y:FLOOR:8:0:419
 
+# HEALING potion
+F:!:FLOOR:8:0:242
+
 # Piece of Elvish Waybread
 F:e:FLOOR:8:0:25
 
 # Dungeon layout
 D:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-D:X                    |              | |  | |              |                    X
+D:Xe                   |              | |  | |              |                   eX
 D:X  O  E         O    |   r          | |  | |       M      |      P       E  P  X
 D:X        O         %%%         EE   %%%gg%%%   EE         %%%                  X
 D:X   E              %       E        LCW  WCL        E       % P            E   X
@@ -138,11 +141,11 @@ D:X    %      % ECE %   I % ECE %   p %CE  EC%   u % ECE %   R % ECE %      %   
 D:X 5      S  % ECE % I   % ECE % p   %CE  EC% u   % ECE % R   % ECE %  a      5 X
 D:X   5       % ECE %     % ECE %     %CEttEC%     % ECE %     % ECE %       5   X
 D:X%%%%%    %%% ECE %%   %% ECE %%   %%CE  EC%%   %% ECE %%   %% ECE %%%    %%%%%X
-D:Xccc |        ECE         ECE        CEttEC        ECE         ECE        | fffX
-D:Xccc |        ECE         ECE                      ECE         ECE        | fffX
-D:X%%%%%        ECE         ECE         %%%%         ECE         ECE        %%%%%X
-D:Xeee %                               %%YY%%                               % eeeX
-D:Xeee |                               |    |                               | eeeX
+D:XYYYY|        ECE         ECE        CEttEC        ECE         ECE        |YYYYX
+D:XYYYY|        ECE         ECE                      ECE         ECE        |YYYYX
+D:X%%%%%%%%%%   ECE         ECE         %%%%         ECE         ECE   %%%%%%%%%%X
+D:X!!!!!!!!!%                          %%YY%%                          %!!!!!!!!!X
+D:X!!!!!!!!!|                          |YYYY|                          |!!!!!!!!!X
 D:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 # Starting position
