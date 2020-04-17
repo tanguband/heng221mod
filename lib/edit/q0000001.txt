@@ -50,7 +50,7 @@ F:-:FLOOR:8:0:352
 F:+:FLOOR:8:0:353
 
 # Recall
-F:=:FLOOR:8:0:353
+F:=:FLOOR:8:0:354
 
 # Illumination
 F:~:FLOOR:8:0:355
