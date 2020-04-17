@@ -2297,7 +2297,7 @@ void do_cmd_options(void)
 				/* Get a new value */
 				while (1)
 				{
-					int msec = delay_factor * delay_factor * delay_factor;
+					int msec = delay_factor;
 					prt(format(_("現在のウェイト: %d (%dミリ秒)", "Current base delay factor: %d (%d msec)"), delay_factor, msec), 22, 0);
 					prt(_("ウェイト (0-9) ESCで決定: ", "Delay Factor (0-9 or ESC to accept): "), 20, 0);
 					k = inkey();
