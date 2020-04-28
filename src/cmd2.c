@@ -3207,7 +3207,7 @@ void do_cmd_fire_aux(int item, object_type *j_ptr)
 
 	u16b path_g[512];	/* For calcuration of path length */
 
-	int msec = delay_factor * delay_factor * delay_factor;
+	int msec = delay_factor;
 
 	/* STICK TO */
 	bool stick_to = FALSE;
@@ -3883,7 +3883,7 @@ bool do_cmd_throw_aux(int mult, bool boomerang, int shuriken)
 
 	char o_name[MAX_NLEN];
 
-	int msec = delay_factor * delay_factor * delay_factor;
+	int msec = delay_factor;
 
 	u32b flgs[TR_FLAG_SIZE];
 	cptr q, s;

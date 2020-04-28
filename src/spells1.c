@@ -6785,7 +6785,7 @@ bool project(int who, int rad, int y, int x, int dam, int typ, int flg, int mons
 
 	int y_saver, x_saver; /* For reflecting monsters */
 
-	int msec = delay_factor * delay_factor * delay_factor;
+	int msec = delay_factor;
 
 	/* Assume the player sees nothing */
 	bool notice = FALSE;
@@ -7854,7 +7854,7 @@ bool binding_field( int dam )
 	int centersign;
 	int x1,x2,y1,y2;
 	u16b p;
-	int msec= delay_factor*delay_factor*delay_factor;
+	int msec= delay_factor;
 
 	/* »°³Ñ·Á¤ÎÄºÅÀ */
 	int point_x[3];
