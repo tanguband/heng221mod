@@ -114,7 +114,7 @@ D:その不滅の光はあらゆる暗闇を追い払う。
 N:2:丈高きエレンディルの
 E:of Elendil
 I:39:5:1
-W:50:25:5:32500
+W:50:12:5:32500
 P:0:1d1:0:0:0
 F:ACTIVATE | SEE_INVIS | HOLD_EXP | INSTA_ART | SPEED | LITE_3 |
 U:MAP_LIGHT
@@ -130,7 +130,7 @@ D:銀の鎖に白い宝石がついている。
 N:3:審判の
 E:of Judgement
 I:39:6:3
-W:70:90:5:150000
+W:70:45:5:150000
 P:0:1d1:0:0:0
 F:ACTIVATE | SEE_INVIS | HOLD_EXP | RES_CONF | RES_CHAOS | LITE_3 | 
 F:INSTA_ART | SPEED | WIS | INT
@@ -172,7 +172,7 @@ D:（R.ゼラズニイ、真世界アンバーシリーズ 3～10巻）
 N:4:カルランマスの
 E:of Carlammas
 I:40:10:2
-W:50:30:3:60000
+W:50:15:3:60000
 F:CON | HIDE_TYPE | ACTIVATE | RES_FIRE | INSTA_ART
 U:PROT_EVIL
 D:$A fiery circle of bronze, with mighty spells to ward off evil.
@@ -191,7 +191,7 @@ D:強力な呪文が込められている。
 N:5:上級王イングウェの
 E:of Ingwe
 I:40:11:3
-W:65:50:3:90000
+W:65:25:3:90000
 F:WIS | CHR | INFRA | HIDE_TYPE |
 F:SEE_INVIS | FREE_ACT | ACTIVATE |
 F:RES_ACID | RES_COLD | RES_ELEC |
@@ -209,7 +209,7 @@ D:イングウェに対抗できる邪悪なものはいなかった。
 N:6:ドワーフの
 E:of the Dwarves
 I:40:12:3
-W:70:70:3:75000
+W:70:35:3:75000
 F:STR | CON | INFRA | HIDE_TYPE |
 F:SEE_INVIS | FREE_ACT | REGEN | LITE | INSTA_ART
 D:$The Nauglamir; a carencet of gold set with a multitude of shining gems of 
@@ -248,7 +248,7 @@ D:「非常に進んだ科学は魔術と見分けがつかない。」
 N:8:《フラキア》という
 E:'Frakir'
 I:45:32:1
-W:50:40:2:75000
+W:50:20:2:75000
 F:STR | INT | WIS | DEX | CON | CHR | STEALTH | HIDE_TYPE |
 F:RES_POIS | ACTIVATE | SEE_INVIS | SEARCH | WARNING | INSTA_ART
 U:DRAIN_1
@@ -274,7 +274,7 @@ D:（R.ゼラズニイ、真世界アンバーシリーズ 6～10巻）
 N:9:勇猛なるトゥルカスの
 E:of Tulkas
 I:45:33:4
-W:70:90:2:175000
+W:70:45:2:175000
 F:STR | DEX | CON | HIDE_TYPE | ACTIVATE | SPEED | INSTA_ART
 U:XTRA_SPEED
 D:$The treasure of Tulkas, most fleet and wrathful of the Valar.
@@ -286,7 +286,7 @@ D:ヴァラールの中でも最も素早くかつ勇猛なトゥルカスの宝
 N:10:《ナルヤ》という
 E:of Power (Narya)
 I:45:34:1
-W:70:100:2:100000
+W:70:50:2:100000
 P:0:1d1:10:10:0
 F:STR | INT | WIS | DEX | CON | CHR | SPEED | HIDE_TYPE |
 F:ACTIVATE | FREE_ACT | SEE_INVIS |
@@ -306,7 +306,7 @@ D:エルフにより作られサウロンから隠された三つの力の指輪
 N:11:《ネンヤ》という
 E:of Power (Nenya)
 I:45:35:2
-W:80:140:2:200000
+W:80:70:2:200000
 P:0:1d1:11:11:0
 F:STR | INT | WIS | DEX | CON | CHR | SPEED | HIDE_TYPE |
 F:ACTIVATE | HOLD_EXP | FREE_ACT | SEE_INVIS |
@@ -327,7 +327,7 @@ D:エルフにより作られサウロンから隠された三つの力の指輪
 N:12:《ヴィルヤ》という
 E:of Power (Vilya)
 I:45:36:3
-W:90:170:2:300000
+W:90:85:2:300000
 P:0:1d1:12:12:0
 F:STR | INT | WIS | DEX | CON | CHR | SPEED | HIDE_TYPE |
 F:ACTIVATE | HOLD_EXP | FREE_ACT | SEE_INVIS |
@@ -393,7 +393,7 @@ D:普通の者はそれを身に付けるだけで歪められ支配されてし
 N:15:パランティアの石
 E:Palantir~ of Westernesse
 I:39:8:3
-W:60:50:10:60000
+W:60:25:10:60000
 P:0:1d1:0:0:0
 F:WIS | CHR | ACTIVATE | TELEPATHY | INSTA_ART | FULL_NAME | LITE_3 | 
 U:DETECT_UNIQUE
@@ -408,7 +408,7 @@ D:高速通信に用いられた「遠望」の石だ。
 N:16:『クリムゾン』
 E:'Crimson'
 I:19:50:4
-W:60:150:100:100000
+W:60:75:100:100000
 P:0:0d0:20:20:0
 F:SPEED | STEALTH | RES_NETHER |
 F:ACTIVATE | SHOW_MODS | INSTA_ART | XTRA_POWER | XTRA_H_RES
@@ -440,7 +440,7 @@ D:あなたの精神は知識の心象と恐るべき理解によって満たさ
 N:18:ファラミアの
 E:of Faramir
 I:40:17:3
-W:30:60:2:20000
+W:30:30:2:20000
 P:0:0d0:12:0:0
 F:STEALTH | SHOW_MODS | HIDE_TYPE |
 F:RES_CONF | SUST_DEX | ACTIVATE |
@@ -622,7 +622,7 @@ D:着用者の道を妨げることは出来ない。
 N:26:シヴァの化身の
 E:of Shiva's Avatar
 I:36:12:1
-W:30:50:120:100000
+W:30:25:120:100000
 P:12:1d2:3:4:20
 F:BLOWS | RES_SHARDS | HOLD_EXP | SLOW_DIGEST |
 F:SUST_STR | SUST_DEX | SUST_CON | SUST_INT | SUST_WIS | SUST_CHR |
@@ -731,7 +731,7 @@ D:エレンディルの息子アナリオンの金属の盾だ。
 N:33:インドラの
 E:of Indra
 I:32:2:5
-W:30:50:15:100000
+W:30:25:15:100000
 P:2:0d0:0:0:18
 F:INT | WIS | CHR | SUST_INT | SUST_WIS | SUST_CHR | RES_BLIND | IM_ELEC
 D:$This is the helm of Indra the god of thunderstorms.
@@ -840,7 +840,7 @@ D:殴り殺し、鎚手王と呼ばれたローハン第九代国王の頑強な
 N:39:ドル=ローミンの
 E:of Dor-Lomin
 I:32:7:4
-W:70:12:75:300000
+W:70:6:75:300000
 P:8:1d3:0:0:20
 F:STR | DEX | CON | HIDE_TYPE |
 F:RES_ACID | RES_ELEC | RES_FIRE | RES_COLD | RES_LITE | RES_BLIND |
@@ -893,7 +893,7 @@ D:仮面の奥の瞳に睨まれれば、怖くて逃げ出さずにはいられ
 N:42:真世界アンバーの
 E:of Amber
 I:33:11:3
-W:40:40:30:125000
+W:40:20:30:125000
 P:0:1d1:0:0:15
 F:STR | WIS | CON | HIDE_TYPE | SPEED |
 F:RES_COLD | RES_FIRE | RES_LITE | RES_BLIND | RES_ELEC | RES_CONF |
@@ -915,7 +915,7 @@ D:これをめぐって骨肉の争いが王子たちの間で繰り広げられ
 N:43:影のジャックの
 E:of Jack of Shadows
 I:35:1:7
-W:30:20:10:100000
+W:30:10:10:100000
 P:1:0d0:0:0:19
 F:STEALTH | SEARCH | FREE_ACT | SEE_INVIS | HOLD_EXP | TELEPATHY
 D:$The cloak of Jack of Shadows. He is one of the kings who rule
@@ -931,7 +931,7 @@ D:（R.ゼラズニイ「影のジャック」）
 N:44:『コルイン』
 E:'Colluin'
 I:35:1:0
-W:5:45:10:80000
+W:5:25:10:80000
 P:1:0d0:0:0:15
 F:RES_ACID | RES_ELEC | RES_FIRE | RES_COLD | RES_POIS | ACTIVATE
 U:RESIST_ALL
@@ -946,7 +946,7 @@ D:精霊達が争う渦中の地ヴァリノールの英雄が身に付けてい
 N:45:『ホルコルレス』
 E:'Holcolleth'
 I:35:2:2
-W:20:15:5:43000
+W:20:8:5:43000
 P:4:0d0:0:0:4
 F:INT | WIS | STEALTH | HIDE_TYPE | RES_ACID | SEARCH | ACTIVATE
 U:SLEEP
@@ -968,7 +968,7 @@ D:知識と思慮を与える。
 N:46:灰色マント王シンゴルの
 E:of Thingol
 I:35:1:3
-W:10:90:10:45000
+W:10:20:10:45000
 P:1:0d0:0:0:18
 F:DEX | CHR | HIDE_TYPE | XTRA_POWER |
 F:FREE_ACT | RES_ACID | RES_FIRE | RES_COLD | ACTIVATE
@@ -1023,7 +1023,7 @@ D:秩序の勢力の静かなる使者が着ていた、紺碧の絹のマント
 N:49:ルシエン王女の
 E:of Luthien
 I:35:6:2
-W:40:40:5:80000
+W:40:20:5:80000
 P:6:0d0:0:0:20
 F:INT | WIS | CHR | HIDE_TYPE | SPEED | STEALTH |
 F:RES_ACID | RES_FIRE | RES_COLD | ACTIVATE |
@@ -1044,7 +1044,7 @@ D:身に付ける者は王女の知識と力が自らの内に蘇ってくるの
 N:50:トゥオルの
 E:of Tuor
 I:35:6:4
-W:40:40:5:50000
+W:40:20:5:50000
 P:6:0d0:0:0:12
 F:STEALTH | FREE_ACT | IM_ACID | SEE_INVIS |
 F:RES_DARK | RES_LITE | XTRA_H_RES
@@ -1093,7 +1093,7 @@ D:放つことができる。
 N:54:『パウアハッハ』
 E:'Paurhach'
 I:31:2:1
-W:10:20:25:15000
+W:10:10:25:15000
 P:2:1d1:0:0:15
 F:STR | RES_FIRE | MAGIC_MASTERY | ACTIVATE
 U:BO_FIRE_1
@@ -1109,7 +1109,7 @@ D:包まれており、身に付ける者は火の球を撃ち出すことも出
 N:55:アヴァロンの主コーウィンの
 E:of Corwin
 I:31:2:4
-W:10:40:25:43000
+W:10:20:25:43000
 P:2:1d1:0:0:15
 F:SUST_CON | CON | REGEN | RES_COLD | FREE_ACT
 D:並外れた強靭さを持つアンバーの王子コーウィンのガントレットだ。
@@ -1120,7 +1120,7 @@ D:並外れた強靭さを持つアンバーの王子コーウィンのガント
 N:56:『パウラエゲン』
 E:'Pauraegen'
 I:31:2:1
-W:10:20:25:11000
+W:10:10:25:11000
 P:2:1d1:0:0:15
 F:DEX | RES_ELEC | LITE | ACTIVATE
 U:BO_ELEC_1
@@ -1135,7 +1135,7 @@ D:火花を散らしていて、電撃の矢を放つことができる。
 N:57:『パウアネン』
 E:'Paurnen'
 I:31:2:1
-W:10:20:25:12000
+W:10:10:25:12000
 P:2:1d1:0:0:15
 F:WIS | RES_ACID | FREE_ACT | ACTIVATE
 U:BO_ACID_1
@@ -1191,7 +1191,7 @@ D:戦いを挑み、その体に永遠に痛み続ける八つの傷を刻みつ
 N:60:フェアノール王の
 E:of Feanor
 I:30:3:15
-W:40:120:40:300000
+W:40:60:40:300000
 P:3:1d1:0:0:20
 F:SPEED |
 F:RES_NEXUS | ACTIVATE
@@ -1210,7 +1210,7 @@ D:隷属させられた中つ国を奪い返す彼の英雄的挑戦の助けと
 N:61:アンバーの王女フローラの
 E:of Flora
 I:30:2:5
-W:10:25:20:70000
+W:10:12:20:70000
 P:2:1d1:0:0:15
 U:CURE_POISON
 F:DEX | HIDE_TYPE | CHR | SUST_CHR | ACTIVATE | FREE_ACT |
@@ -1232,7 +1232,7 @@ D:彼女のブーツには身に付けた者を魅力的に見せる魔法がか
 N:62:スロール王の
 E:of Thror
 I:30:6:3
-W:30:25:80:85000
+W:30:12:80:85000
 P:6:1d1:0:0:20
 F:STR | CON | HIDE_TYPE | SPEED | XTRA_H_RES
 D:$Sturdy footwear of leather and steel as enduring as the long-suffering 
@@ -1267,7 +1267,7 @@ D:破壊神シヴァの力を持った革の靴だ。
 N:64:丈高きマエズロスの
 E:of Maedhros
 I:23:5:3
-W:15:30:30:62500
+W:15:15:30:62500
 P:0:2d5:12:15:0
 F:INT | DEX | HIDE_TYPE | SPEED | XTRA_RES_OR_POWER |
 F:SLAY_TROLL | SLAY_GIANT | FREE_ACT | SEE_INVIS | SHOW_MODS |
@@ -1285,7 +1285,7 @@ D:失ったが、後に左手で以前より巧みに剣を操ったという。
 N:65:陰謀家ケインの
 E:of Caine
 I:23:4:4
-W:20:80:12:125000
+W:20:40:12:125000
 P:0:2d4:10:15:5
 F:DEX | HIDE_TYPE | STEALTH | SEARCH | SLAY_HUMAN |
 F:SLAY_EVIL | SLAY_TROLL | SLAY_ORC | BRAND_POIS |
@@ -1450,7 +1450,7 @@ D:発見され、それ以降ガンダルフの物となる。
 N:74:『ノートゥング』
 E:'Nothung'
 I:23:16:4
-W:20:90:150:95000
+W:20:45:150:95000
 P:0:2d5:12:16:0
 F:SEARCH | BRAND_ELEC | SLAY_ORC | KILL_DRAGON | RES_FEAR |
 F:RES_ELEC | LITE | RES_FIRE | RES_POIS |
@@ -1539,7 +1539,7 @@ D:耐えることができよう。
 N:77:『ザルクスラ』
 E:'Zarcuthra'
 I:23:25:4
-W:30:180:250:205000
+W:30:90:250:205000
 P:0:4d6:19:21:0
 F:STR | CHR | INFRA | HIDE_TYPE | VORPAL | XTRA_RES_OR_POWER | SLAY_HUMAN |
 F:KILL_DRAGON | SLAY_ANIMAL | SLAY_EVIL | BRAND_FIRE | LITE |
@@ -1627,7 +1627,7 @@ D:それはまさに戦いの化身だ。
 N:82:『リンギル』
 E:'Ringil'
 I:23:17:10
-W:20:120:130:300000
+W:20:60:130:300000
 P:0:4d5:22:25:0
 F:SPEED | REGEN | ACTIVATE | SHOW_MODS | RIDING |
 F:SLAY_EVIL | BRAND_COLD | SLAY_UNDEAD | SLAY_DEMON | SLAY_TROLL |
@@ -1821,7 +1821,7 @@ D:敵の肉体に貪欲に食い込む。
 N:92:『ヴォーパルブレード』
 E:'Vorpal Blade'
 I:23:17:2
-W:50:240:150:250000
+W:50:120:150:250000
 P:0:5d5:32:32:0
 F:VORPAL | SLAY_EVIL | HIDE_TYPE |
 F:FREE_ACT | LITE | SEE_INVIS | SLOW_DIGEST | REGEN | SPEED | STR | DEX
@@ -1988,7 +1988,7 @@ D:と魔狼たちを敗走させた。
 N:101:不死ドゥリンの
 E:of Durin
 I:22:25:3
-W:30:90:230:150000
+W:30:45:230:150000
 P:0:4d4:10:20:15
 F:CON | HIDE_TYPE |
 F:KILL_DRAGON | SLAY_DEMON | SLAY_TROLL | SLAY_ORC | FREE_ACT |
@@ -2008,7 +2008,7 @@ D:者共を打ち倒す。
 N:102:旗手エオンウェの
 E:of Eonwe
 I:22:25:2
-W:30:120:230:200000
+W:30:60:230:200000
 P:0:4d4:15:18:8
 F:STR | INT | WIS | DEX | CON | CHR | HIDE_TYPE |
 F:SLAY_EVIL | BRAND_COLD | SLAY_UNDEAD |
@@ -2141,7 +2141,7 @@ D:冥界の者共の軍勢を刺し貫いたオスセの霊力を宿している
 N:108:水の王ウルモの
 E:of Ulmo
 I:22:5:4
-W:30:90:70:120000
+W:30:45:70:120000
 P:0:4d8:15:19:0
 F:DEX | HIDE_TYPE | XTRA_POWER |
 F:SLAY_DRAGON | SLAY_ANIMAL | FREE_ACT | HOLD_EXP | IM_ACID |
@@ -2182,7 +2182,7 @@ D:行き来する能力を持っている。
 N:110:『暁の剣』
 E:of the Dawn
 I:23:17:3
-W:40:120:130:250000
+W:40:60:130:250000
 P:0:3d5:20:20:0
 F:ACTIVATE | LITE | BRAND_FIRE | FREE_ACT | RES_FIRE | INFRA | RIDING |
 F:SLAY_EVIL | SLAY_DRAGON | SLAY_UNDEAD | SLAY_DEMON | VORPAL |
@@ -2311,7 +2311,7 @@ D:手にしている者は全く影響を受けない。
 N:117:鍛冶の司アウレの
 E:of Aule
 I:21:8:4
-W:40:75:120:250000
+W:40:40:120:250000
 P:0:9d3:19:21:5
 F:WIS | HIDE_TYPE |
 F:KILL_DRAGON | SLAY_EVIL | BRAND_ELEC | SLAY_UNDEAD | SLAY_DEMON |
@@ -2348,7 +2348,7 @@ D:燃える星と名付けられ、守りと思慮の神秘的な力を封じた
 N:119:『エリリル』
 E:'Eriril'
 I:21:21:4
-W:20:5:40:80000
+W:20:20:40:80000
 P:0:1d2:3:5:0
 F:INT | WIS | CHR | MAGIC_MASTERY | HIDE_TYPE |
 F:SUST_CON | DEC_MANA | WARNING | LITE | SEE_INVIS |
@@ -2619,7 +2619,7 @@ D:(J.R.R.トールキン、田中明子訳、シルマリルの物語)
 N:134:バック郷の
 E:of Buckland
 I:19:2:3
-W:40:35:20:50000
+W:40:20:20:50000
 P:0:2d1:19:15:0
 F:SPEED | XTRA_MIGHT |
 F:RES_FEAR | RES_BLIND | RES_CONF | SHOW_MODS | XTRA_RES_OR_POWER
@@ -2735,7 +2735,7 @@ D:最強の剣とそっくりだ。
 N:143:ボロミアの
 E:of Boromir
 I:40:18:2
-W:30:60:2:25000
+W:30:30:2:25000
 P:0:0d0:0:8:0
 F:SHOW_MODS | HIDE_TYPE | 
 F:SUST_STR | RES_FEAR | ACTIVATE | 
@@ -2749,7 +2749,7 @@ D:大きな金の猟犬の装飾が両端に取り付けられている。
 N:144:『村正』
 E:'Muramasa'
 I:23:20:2
-W:60:200:200:1000000
+W:60:100:200:1000000
 P:0:10d5:0:0:-20
 F:HIDE_TYPE | BLOWS | VORPAL | VAMPIRIC | SLAY_HUMAN |
 F:SHOW_MODS | SPEED | ACTIVATE | RES_DISEN | NO_TELE |
@@ -2780,7 +2780,7 @@ D:可能だ。
 N:146:『石仮面』
 E:'Stone Mask'
 I:32:5:3
-W:60:66:75:0
+W:60:40:75:0
 P:5:1d3:8:8:-10
 F:STR | CON | INFRA | HIDE_TYPE | SHOW_MODS |
 F:RES_CONF | RES_NETHER | RES_COLD | RES_POIS | RES_DARK | RES_FEAR |
@@ -2792,7 +2792,7 @@ D:装備した者を吸血鬼に変えてしまうというディオの石仮面
 N:147:飛行
 E:of Laputa
 I:39:9:2
-W:60:60:10:60000
+W:60:30:10:60000
 P:0:1d1:0:0:0
 F:INT | CHR | SPEED | ACTIVATE | LEVITATION | HOLD_EXP | INSTA_ART | LITE_3 | 
 U:BA_MANA
@@ -2812,7 +2812,7 @@ D:那須与一の弓は狙いを外す事はない。
 N:149:八尺
 E:'Yasaka-no-Magatama'
 I:40:19:3
-W:65:50:3:90000
+W:65:30:3:90000
 F:INT | CHR | SEARCH | HIDE_TYPE |
 F:SEE_INVIS | FREE_ACT | ACTIVATE |
 F:RES_FIRE | RES_COLD | RES_ELEC |
@@ -2830,7 +2830,7 @@ D:鋼をも切り裂く、切れ味抜群の日本刀だ。
 N:151:八咫
 E:'Yata-no-Kagami'
 I:34:50:3
-W:65:65:50:150000
+W:65:30:50:150000
 P:0:1d1:0:0:18
 F:INSTA_ART | ACTIVATE | SEE_INVIS | REFLECT | LITE | INFRA |
 F:INT | WIS | TELEPATHY | HOLD_EXP | HIDE_TYPE
@@ -2883,7 +2883,7 @@ F:SUST_STR | SEE_INVIS | SHOW_MODS | LITE | BLESSED
 N:156:『フランテング』
 E:'Hrunting'
 I:23:25:4
-W:30:90:250:100000
+W:30:45:250:100000
 P:0:4d6:13:21:0
 F:STR | HIDE_TYPE |
 F:VORPAL | SLAY_DRAGON | KILL_GIANT |
@@ -2894,14 +2894,14 @@ D:最後の戦いではこの剣によって竜を退治した。
 N:157:『如意金葹棒重一万三千五百斤』
 E:'Nyoi-bou'
 I:21:16:5
-W:80:70:500:300000
+W:80:40:500:300000
 P:0:7d7:5:25:10
 F:STR | SLAY_EVIL | SEE_INVIS | RIDING
 
 N:158:アヌビス神の
 E:of Anubis
 I:23:20:4
-W:30:90:120:200000
+W:30:45:120:200000
 P:0:3d4:28:22:-30
 F:DEX | CHAOTIC | CURSED | HEAVY_CURSE | TUNNEL | AGGRAVATE | BLOWS |
 F:RES_CONF | RES_CHAOS | RES_FEAR | RES_DISEN | NO_TELE
@@ -2920,7 +2920,7 @@ D:結局は彼自身が周の文王に釣られてしまったのであった。
 N:160:『紅蓮姫』
 E:'Gurenki'
 I:23:17:2
-W:60:150:130:100000
+W:60:75:130:100000
 P:0:4d5:-10:25:0
 F:VORPAL | VAMPIRIC | SLAY_EVIL | KILL_DEMON | ESP_DEMON |
 F:AGGRAVATE | LITE | CON 
@@ -2930,7 +2930,7 @@ D:朱金に輝く刀身で魔性の心臓をつらぬき、その命を食べつ
 N:161:『蜻蛉切』
 E:'Tonbo giri'
 I:22:7:3
-W:35:70:350:250000
+W:35:40:350:250000
 P:0:4d9:6:23:10
 F:STR | DEX | HIDE_TYPE | SEARCH | FREE_ACT | SLAY_HUMAN |
 F:SLAY_TROLL | SLAY_GIANT | SLAY_ANIMAL | SLAY_ORC | RES_FIRE | RES_COLD |
@@ -2956,7 +2956,7 @@ D:必ずや、スーパーアクションを可能にするだろう。
 N:163:『ガエボルグ』
 E:'GaeBolg'
 I:22:2:4
-W:45:90:80:150000
+W:45:45:80:150000
 P:0:3d6:16:18:0
 F:STR | DEX | HIDE_TYPE | THROW |
 F:BRAND_ELEC | SLAY_EVIL | SLAY_GIANT |
@@ -3113,7 +3113,7 @@ D:『すばやき刺』と対を成している。
 N:176:『エクスカリバー』
 E:'Excalibur'
 I:23:17:3
-W:50:180:130:300000
+W:50:90:130:300000
 P:0:5d5:21:19:5
 F:WIS | CHR | SUST_WIS | SUST_CHR | 
 F:VORPAL | TUNNEL | RIDING |
@@ -3159,7 +3159,7 @@ D:蜘蛛と対峙すると、恐れのあまりプリンのようにぷるぷる
 N:180:ハラドの
 E:of Harad
 I:19:24:-2
-W:60:120:200:35000
+W:60:60:200:35000
 P:0:4d1:18:18:-44
 F:WIS | STEALTH | XTRA_SHOTS | XTRA_MIGHT | AGGRAVATE | RES_LITE | RES_DARK | 
 F:HIDE_TYPE | SHOW_MODS | TY_CURSE
@@ -3236,7 +3236,7 @@ D:その柄を手にすれば、しなやかな身のこなしと軽やかな足
 N:185:『パウアニンメン』
 E:'Paurnimmen'
 I:31:2:1
-W:10:20:25:13000
+W:10:10:25:13000
 P:2:1d1:0:0:15
 F:INT | RES_COLD | EASY_SPELL | ACTIVATE
 U:BO_COLD_1
@@ -3356,7 +3356,7 @@ F:QUESTITEM
 N:193:美髯公関羽の
 E:of Guan Yu
 I:23:22:3
-W:60:60:320:200000
+W:60:40:320:200000
 P:0:4d5:20:20:5
 F:STR | DEX | CON | SLAY_EVIL | SLAY_HUMAN |
 F:VORPAL | SHOW_MODS
@@ -3503,7 +3503,7 @@ D:織田信長の愛用した光り輝く西洋の鎧だ。
 N:207:『真魔剛竜剣』
 E:'Dragonic Sword'
 I:23:25:3
-W:50:160:200:180000
+W:50:80:200:180000
 P:0:4d6:17:23:0
 F:STR | SLAY_EVIL | SLAY_DEMON | BRAND_ELEC |
 F:RES_ELEC | RES_FIRE | RES_NETHER |
@@ -3608,7 +3608,7 @@ D:天が稲光し、地が揺れ動くようやったそうな。」
 N:214:青き衣のフンディンの
 E:of Fundin Bluecloak
 I:21:6:4
-W:65:65:130:150000
+W:65:40:130:150000
 P:0:4d4:13:17:10
 F:STR | WIS | SPEED | LITE | HIDE_TYPE | 
 F:SLAY_EVIL | SLAY_UNDEAD | 
@@ -3625,7 +3625,7 @@ D:護り抜き、死してなお生にすがりつこうとする者どもを打
 N:215:宵闇の
 E:of The Pitch Dark Night
 I:40:24:4
-W:50:150:2:50000
+W:50:75:2:50000
 P:0:0d0:0:0:5
 F:STEALTH | SEARCH | HIDE_TYPE | SEE_INVIS |
 F:RES_DARK | ACTIVATE | LITE_M1 |
@@ -3652,7 +3652,7 @@ D:いるのは女だ。わたしはエオウィン、エオムンドの娘だ。
 N:217:聖騎士の
 E:of Sacred Knights
 I:40:25:2
-W:50:50:2:77777
+W:50:25:2:77777
 P:0:0d0:0:0:10
 F:STR | WIS | HIDE_TYPE |
 F:RES_CONF | RES_CHAOS | BLESSED | 
@@ -3676,7 +3676,7 @@ D:地獄の囚人を拘束する首輪だ。多くの囚人の怨念が込めら
 N:219:帯魔力ペンダント
 E:Charmed Pendant
 I:40:27:2
-W:50:100:2:100000
+W:50:50:2:100000
 P:0:0d0:0:0:5
 F:INT | CHR | INFRA | SEARCH | HIDE_TYPE | FULL_NAME |
 F:SEE_INVIS | FREE_ACT | SLOW_DIGEST | REGEN | LITE | WARNING |
@@ -3687,7 +3687,7 @@ U:CURE_MANA_FULL
 N:220:ものまねの始祖ゴゴの
 E:of Gogo
 I:40:28:4
-W:50:100:2:55555
+W:50:50:2:55555
 P:0:0d0:0:0:0
 F:INT | WIS | DEX | 
 F:SEE_INVIS | LITE |
@@ -3999,7 +3999,7 @@ D:身にまとうと龍星座の小宇宙を感じることができる。
 N:244:『ヴァンパイア・キラー』
 E:'Vampire Killer'
 I:21:2:3
-W:50:55:75:220000
+W:50:40:75:220000
 P:0:5d6:15:21:0
 F:LEVITATION | SHOW_MODS | ACTIVATE | DEX | CON
 F:SLAY_EVIL | BRAND_FIRE | SLAY_DEMON | KILL_UNDEAD |
@@ -4018,7 +4018,7 @@ D:$and vanish the poisonous souls.
 N:245:運命のオーブ
 E:The Orb of Fate 
 I:39:10:3
-W:70:70:15:45000
+W:70:35:15:45000
 P:0:1d1:0:0:20
 F:WIS | CON | WARNING | ACTIVATE | FULL_NAME | LITE_3 |
 U:TELEPORT_LEVEL
@@ -4079,7 +4079,7 @@ D:さりとて羽根飾りと微かな加護以上に特筆すべき印象はな
 N:250:『プラグ』
 E:'Plag'
 I:40:29:3
-W:60:100:0:60000
+W:60:50:0:60000
 P:0:1d1:0:0:0
 F:INSTA_ART | STR | WIS | DEX | CON | SPEED |
 F:SLOW_DIGEST | REGEN | PERMA_CURSE | ESP_UNIQUE |
@@ -4091,7 +4091,7 @@ D:　コンピューターの　使い捨てターミナルになることが」
 N:251:竪琴師ロビントンの
 E:of Robinton, the masterharper
 I:19:51:3
-W:50:150:120:75000
+W:50:75:120:75000
 P:0:0d0:0:0:0
 F:DEX | CHR
 F:RES_FIRE | RES_SOUND | RES_NETHER | SHOW_MODS | INSTA_ART
@@ -4099,7 +4099,7 @@ F:RES_FIRE | RES_SOUND | RES_NETHER | SHOW_MODS | INSTA_ART
 N:252:『サンブレード』
 E:'Sun Blade'
 I:23:25:3
-W:30:150:180:65000
+W:30:75:180:65000
 P:0:3d6:16:20:10
 F:INT | FORCE_WEAPON
 F:SHOW_MODS
