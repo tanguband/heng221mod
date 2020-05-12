@@ -43,6 +43,9 @@ F:a:FLOOR:8:44
 # Floor with Bandit
 F:b:FLOOR:8:150
 
+# Alarm Traps
+F:^:TRAP_ALARM:12
+
 # Trap Location
 F:-:FLOOR:8:0:352
 
@@ -57,7 +60,7 @@ F:~:FLOOR:8:0:355
 
 # Dungeon layout
 D:XXXXXXXXXXXXXXX
-D:X....a....X.=TX
+D:X^...a....X.=TX
 D:X.........D..-X
 D:X.........Xb.~X
 D:XXXXX.....XXXXX
