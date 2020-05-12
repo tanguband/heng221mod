@@ -1,6 +1,6 @@
 /*!
  * @file angband.h
- * @brief Angband(ÊÑ¶òÈÚÅÜ)¥á¥¤¥ó¥Ø¥Ã¥À¥Õ¥¡¥¤¥ë
+ * @brief Angband(å¤‰æ„šè›®æ€’)ãƒ¡ã‚¤ãƒ³ãƒ˜ãƒƒãƒ€ãƒ•ã‚¡ã‚¤ãƒ«
  * Main "Angband" header file
  * @date 2014/08/08
  * @author

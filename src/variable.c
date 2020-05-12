@@ -1,6 +1,6 @@
 /*!
  * @file variable.c
- * @brief ¥°¥í¡¼¥Ğ¥ëÊÑ¿ôÄêµÁ / Angband variables
+ * @brief ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°å®šç¾© / Angband variables
  * @date 2014/10/05
  * @author
  * Copyright (c) 1997 Ben Harrison, James E. Wilson, Robert A. Koeneke<br>
@@ -13,7 +13,7 @@
 #include "angband.h"
 
 /*!
- * ¥³¥Ô¡¼¥é¥¤¥È¾ğÊó /
+ * ã‚³ãƒ”ãƒ¼ãƒ©ã‚¤ãƒˆæƒ…å ± /
  * Hack -- Link a copyright message into the executable
  */
 const cptr copyright[5] =
@@ -26,22 +26,22 @@ const cptr copyright[5] =
 };
 
 
-int max_macrotrigger = 0; /*!< ¸½ºßÅĞÏ¿Ãæ¤Î¥Ş¥¯¥í(¥È¥ê¥¬¡¼)¤Î¿ô */
-cptr macro_template = NULL; /*!< AngbandÀßÄê¥Õ¥¡¥¤¥ë¤ÎT: ¥¿¥°¾ğÊó¤«¤éÆÉ¤ß¹ş¤ó¤ÀÄ¹¤¤T¥³¡¼¥É¤ò½èÍı¤¹¤ë¤¿¤á¤ËÍøÍÑ¤¹¤ëÊ¸»úÎó¥İ¥¤¥ó¥¿ */
-cptr macro_modifier_chr; /*!< &x# ¤Ç»ØÄê¤µ¤ì¤ë¥Ş¥¯¥í¥È¥ê¥¬¡¼¤Ë´Ø¤¹¤ë¾ğÊó¤òµ­Ï¿¤¹¤ëÊ¸»úÎó¥İ¥¤¥ó¥¿ */
-cptr macro_modifier_name[MAX_MACRO_MOD]; /*!< ¥Ş¥¯¥í¾å¤Ç¼è¤ê°·¤¦ÆÃ¼ì¥­¡¼¤òÊ¸»úÎó¾å¤ÇÉ½¸½¤¹¤ë¤¿¤á¤Î¥Õ¥©¡¼¥Ş¥Ã¥È¤òµ­Ï¿¤·¤¿Ê¸»úÎó¥İ¥¤¥ó¥¿ÇÛÎó */
-cptr macro_trigger_name[MAX_MACRO_TRIG]; /*!< ¥Ş¥¯¥í¤Î¥È¥ê¥¬¡¼¥³¡¼¥É */
-cptr macro_trigger_keycode[2][MAX_MACRO_TRIG];  /*!< ¥Ş¥¯¥í¤ÎÆâÍÆ */
+int max_macrotrigger = 0; /*!< ç¾åœ¨ç™»éŒ²ä¸­ã®ãƒã‚¯ãƒ­(ãƒˆãƒªã‚¬ãƒ¼)ã®æ•° */
+cptr macro_template = NULL; /*!< Angbandè¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®T: ã‚¿ã‚°æƒ…å ±ã‹ã‚‰èª­ã¿è¾¼ã‚“ã é•·ã„Tã‚³ãƒ¼ãƒ‰ã‚’å‡¦ç†ã™ã‚‹ãŸã‚ã«åˆ©ç”¨ã™ã‚‹æ–‡å­—åˆ—ãƒã‚¤ãƒ³ã‚¿ */
+cptr macro_modifier_chr; /*!< &x# ã§æŒ‡å®šã•ã‚Œã‚‹ãƒã‚¯ãƒ­ãƒˆãƒªã‚¬ãƒ¼ã«é–¢ã™ã‚‹æƒ…å ±ã‚’è¨˜éŒ²ã™ã‚‹æ–‡å­—åˆ—ãƒã‚¤ãƒ³ã‚¿ */
+cptr macro_modifier_name[MAX_MACRO_MOD]; /*!< ãƒã‚¯ãƒ­ä¸Šã§å–ã‚Šæ‰±ã†ç‰¹æ®Šã‚­ãƒ¼ã‚’æ–‡å­—åˆ—ä¸Šã§è¡¨ç¾ã™ã‚‹ãŸã‚ã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚’è¨˜éŒ²ã—ãŸæ–‡å­—åˆ—ãƒã‚¤ãƒ³ã‚¿é…åˆ— */
+cptr macro_trigger_name[MAX_MACRO_TRIG]; /*!< ãƒã‚¯ãƒ­ã®ãƒˆãƒªã‚¬ãƒ¼ã‚³ãƒ¼ãƒ‰ */
+cptr macro_trigger_keycode[2][MAX_MACRO_TRIG];  /*!< ãƒã‚¯ãƒ­ã®å†…å®¹ */
 
-int level_up = 0; /*!< ¥ì¥Ù¥ë¥¢¥Ã¥×¤Îºİ¤ËÃÙ±ä¤·¤Æcalc_mana()´Ø¿ô¾å¤Ç¾å¾ºÎÌ¤òÉ½¼¨¤¹¤ë¤«¤É¤¦¤«¤ÎÈ½Äê¥Õ¥é¥° */
+int level_up = 0; /*!< ãƒ¬ãƒ™ãƒ«ã‚¢ãƒƒãƒ—ã®éš›ã«é…å»¶ã—ã¦calc_mana()é–¢æ•°ä¸Šã§ä¸Šæ˜‡é‡ã‚’è¡¨ç¤ºã™ã‚‹ã‹ã©ã†ã‹ã®åˆ¤å®šãƒ•ãƒ©ã‚° */
 
 
 /* 
- * ¼«Æ°½¦¤¤/ÇË²õÀßÄê¤Î¥ê¥¹¥È¤Ë´Ø¤¹¤ëÊÑ¿ô / List for auto-picker/destroyer entries
+ * è‡ªå‹•æ‹¾ã„/ç ´å£Šè¨­å®šã®ãƒªã‚¹ãƒˆã«é–¢ã™ã‚‹å¤‰æ•° / List for auto-picker/destroyer entries
  */
-int max_autopick = 0; /*!< ¸½ºßÅĞÏ¿¤·¤Æ¤¤¤ë¼«Æ°½¦¤¤/ÇË²õÀßÄê¤Î¿ô */
-int max_max_autopick = 0; /*!< ¼«Æ°½¦¤¤/ÇË²õÀßÄê¤Î¸Â³¦¿ô */
-autopick_type *autopick_list = NULL; /*!< ¼«Æ°½¦¤¤/ÇË²õÀßÄê¹½Â¤ÂÎ¤Î¥İ¥¤¥ó¥¿ÇÛÎó */
+int max_autopick = 0; /*!< ç¾åœ¨ç™»éŒ²ã—ã¦ã„ã‚‹è‡ªå‹•æ‹¾ã„/ç ´å£Šè¨­å®šã®æ•° */
+int max_max_autopick = 0; /*!< è‡ªå‹•æ‹¾ã„/ç ´å£Šè¨­å®šã®é™ç•Œæ•° */
+autopick_type *autopick_list = NULL; /*!< è‡ªå‹•æ‹¾ã„/ç ´å£Šè¨­å®šæ§‹é€ ä½“ã®ãƒã‚¤ãƒ³ã‚¿é…åˆ— */
 
 /*
  * Savefile version
@@ -120,10 +120,10 @@ s16b object_level;		/* Current object creation level */
 s16b monster_level;		/* Current monster creation level */
 s16b base_level;        /* Base dungeon level */
 
-s32b turn;				/*!< ²èÌÌÉ½¼¨¾å¤Î¥²¡¼¥à»ş´Ö´ğ½à¤È¤Ê¤ë¥¿¡¼¥ó / Current game turn */
-s32b turn_limit;		/*!< turn¤ÎºÇÂçÃÍ / Limit of game turn */
-s32b dungeon_turn;			/*!< NASTYÀ¸À®¤Î·×»»¤Ë´Ø¤ï¤ëÆâÉô¥¿¡¼¥óÃÍ / Game turn in dungeon */
-s32b dungeon_turn_limit;	/*!< dungeon_turn¤ÎºÇÂçÃÍ / Limit of game turn in dungeon */
+s32b turn;				/*!< ç”»é¢è¡¨ç¤ºä¸Šã®ã‚²ãƒ¼ãƒ æ™‚é–“åŸºæº–ã¨ãªã‚‹ã‚¿ãƒ¼ãƒ³ / Current game turn */
+s32b turn_limit;		/*!< turnã®æœ€å¤§å€¤ / Limit of game turn */
+s32b dungeon_turn;			/*!< NASTYç”Ÿæˆã®è¨ˆç®—ã«é–¢ã‚ã‚‹å†…éƒ¨ã‚¿ãƒ¼ãƒ³å€¤ / Game turn in dungeon */
+s32b dungeon_turn_limit;	/*!< dungeon_turnã®æœ€å¤§å€¤ / Limit of game turn in dungeon */
 s32b old_turn;			/* Turn when level began */
 s32b old_battle;
 

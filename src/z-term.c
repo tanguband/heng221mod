@@ -24,8 +24,8 @@
 #define AF_KANJI2  0x20
 #define AF_KANJIC  0x0f
 /*
- * ����ʸ���б���
- * °��������ʸ���Σ��Х����ܡ����Х����ܤ⵭����
+ * 全角文字対応。
+ * 属性に全角文字の１バイト目、２バイト目も記憶。
  * By FIRST
  */
 #endif
@@ -569,15 +569,15 @@ void Term_queue_bigchar(int x, int y, byte a, char c, byte ta, char tc)
 	 * A table which relates each ascii character to a multibyte
 	 * character.
 	 *
-	 * �֢��פ�������Ʀ������������ɤ˻��ѡ�
+	 * 「■」は二倍幅豆腐の内部コードに使用。
 	 */
 	static char ascii_to_zenkaku[] =
-		"�����ɡ������ǡʡˡ��ܡ��ݡ���"
-		"���������������������������䡩"
-		"�����£ãģţƣǣȣɣʣˣ̣ͣΣ�"
-		"�Уѣңӣԣգ֣ףأ٣ڡΡ��ϡ���"
-		"�ƣ����������������"
-		"�������������������Сáѡ���";
+		"　！”＃＄％＆’（）＊＋，−．／"
+		"０１２３４５６７８９：；＜＝＞？"
+		"＠ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯ"
+		"ＰＱＲＳＴＵＶＷＸＹＺ［＼］＾＿"
+		"‘ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏ"
+		"ｐｑｒｓｔｕｖｗｘｙｚ｛｜｝〜■";
 #endif
 
 	byte a2;
@@ -733,12 +733,12 @@ void Term_queue_chars(int x, int y, int n, byte a, cptr s)
 
 
 #ifdef JP
-	/* ɽ��ʸ���ʤ� */
+	/* 表示文字なし */
 	if (n == 0 || *s == 0) return;
 	/*
-	 * ����ʸ���α�Ⱦʬ����ʸ����ɽ�������硢
-	 * �Ťʤä�ʸ���κ���ʬ��õ
-	 * ɽ�����ϰ��֤���ü�Ǥʤ��Ȳ��ꡣ
+	 * 全角文字の右半分から文字を表示する場合、
+	 * 重なった文字の左部分を消去。
+	 * 表示開始位置が左端でないと仮定。
 	 */
 	if ((scr_aa[x] & AF_KANJI2) && (scr_aa[x] & AF_BIGTILE2) != AF_BIGTILE2)
 	{
@@ -751,8 +751,8 @@ void Term_queue_chars(int x, int y, int n, byte a, cptr s)
 	for ( ; n; x++, s++, n--)
 	{
 #ifdef JP
-		/* �ü�ʸ���Ȥ���MSB��Ω�äƤ����ǽ�������� */
-		/* ���ξ��attr��MSB��Ω�äƤ���ΤǤ���Ǽ��̤��� */
+		/* 特殊文字としてMSBが立っている可能性がある */
+		/* その場合attrのMSBも立っているのでこれで識別する */
 /* check */
 		if (!(a & AF_TILE1) && iskanji(*s))
 		{
@@ -807,9 +807,9 @@ void Term_queue_chars(int x, int y, int n, byte a, cptr s)
 
 #ifdef JP
 	/*
-	 * ����ʸ���κ�Ⱦʬ��ɽ����λ�����硢
-	 * �Ťʤä�ʸ���α���ʬ��õ
-	 * (����ɲá��������1ʸ���ܤǤʤ�����Τ����褦�ˡ�)
+	 * 全角文字の左半分で表示を終了する場合、
+	 * 重なった文字の右部分を消去。
+	 * (条件追加：タイルの1文字目でない事を確かめるように。)
 	 */
 	{
 
@@ -883,7 +883,7 @@ static void Term_fresh_row_pict(int y, int x1, int x2)
 	char nc;
 
 #ifdef JP
-	/* ����ʸ���Σ��Х����ܤ��ɤ��� */
+	/* 全角文字の２バイト目かどうか */
 	int kanji = 0;
 #endif
 	/* Scan "modified" columns */
@@ -900,15 +900,15 @@ static void Term_fresh_row_pict(int y, int x1, int x2)
 #ifdef JP
 		if (kanji)
 		{
-			/* ����ʸ�����Х����� */
+			/* 全角文字２バイト目 */
 			kanji = 0;
 			old_aa[x] = na;
 			old_cc[x] = nc;
 			fn++;
 			continue;
 		}
-		/* �ü�ʸ���Ȥ���MSB��Ω�äƤ����ǽ�������� */
-		/* ���ξ��attr��MSB��Ω�äƤ���ΤǤ���Ǽ��̤��� */
+		/* 特殊文字としてMSBが立っている可能性がある */
+		/* その場合attrのMSBも立っているのでこれで識別する */
 /* check */
 		kanji = (iskanji(nc) && !(na & AF_TILE1));
 #endif
@@ -942,7 +942,7 @@ static void Term_fresh_row_pict(int y, int x1, int x2)
 			}
 
 #ifdef JP
-			/* ����ʸ���λ��ϺƳ����֤ϡܣ� */
+			/* 全角文字の時は再開位置は＋１ */
 			if(kanji)
 			{
 				x++;
@@ -1020,7 +1020,7 @@ static void Term_fresh_row_both(int y, int x1, int x2)
 	char nc;
 
 #ifdef JP
-	/* ����ʸ���Σ��Х����ܤ��ɤ��� */
+	/* 全角文字の２バイト目かどうか */
 	int kanji = 0;
 #endif
 	/* Scan "modified" columns */
@@ -1037,15 +1037,15 @@ static void Term_fresh_row_both(int y, int x1, int x2)
 #ifdef JP
 		if (kanji)
 		{
-			/* ����ʸ�����Х����� */
+			/* 全角文字２バイト目 */
 			kanji = 0;
 			old_aa[x] = na;
 			old_cc[x] = nc;
 			fn++;
 			continue;
 		}
-		/* �ü�ʸ���Ȥ���MSB��Ω�äƤ����ǽ�������� */
-		/* ���ξ��attr��MSB��Ω�äƤ���ΤǤ���Ǽ��̤��� */
+		/* 特殊文字としてMSBが立っている可能性がある */
+		/* その場合attrのMSBも立っているのでこれで識別する */
 /* check */
 /*		kanji = (iskanji(nc));  */
 		kanji = (iskanji(nc) && !(na & AF_TILE1));
@@ -1088,7 +1088,7 @@ static void Term_fresh_row_both(int y, int x1, int x2)
 			}
 
 #ifdef JP
-			/* ����ʸ���λ��ϺƳ����֤ϡܣ� */
+			/* 全角文字の時は再開位置は＋１ */
 			if(kanji)
 			{
 				x++;
@@ -1231,7 +1231,7 @@ static void Term_fresh_row_text(int y, int x1, int x2)
 	char nc;
 
 #ifdef JP
-	/* ����ʸ���Σ��Х����ܤ��ɤ��� */
+	/* 全角文字の２バイト目かどうか */
 	int kanji = 0;
 
 	for (x = 0; x < x1; x++)
@@ -1260,15 +1260,15 @@ static void Term_fresh_row_text(int y, int x1, int x2)
 #ifdef JP
 		if (kanji)
 		{
-			/* ����ʸ�����Х����� */
+			/* 全角文字２バイト目 */
 			kanji = 0;
 			old_aa[x] = na;
 			old_cc[x] = nc;
 			fn++;
 			continue;
 		}
-		/* �ü�ʸ���Ȥ���MSB��Ω�äƤ����ǽ�������� */
-		/* ���ξ��attr��MSB��Ω�äƤ���ΤǤ���Ǽ��̤��� */
+		/* 特殊文字としてMSBが立っている可能性がある */
+		/* その場合attrのMSBも立っているのでこれで識別する */
 /* check */
 		kanji = (iskanji(nc) && !(na & AF_TILE1));
 #endif
@@ -1302,7 +1302,7 @@ static void Term_fresh_row_text(int y, int x1, int x2)
 			}
 
 #ifdef JP
-			/* ����ʸ���λ��ϺƳ����֤ϡܣ� */
+			/* 全角文字の時は再開位置は＋１ */
 			if(kanji)
 			{
 				x++;
@@ -1612,9 +1612,9 @@ errr Term_fresh(void)
 			
 			/*
 			 * Hack -- restore the actual character
-			 * ����ʸ���������ϰϤ����������꾮�����ȡ�
-			 * ��񤭤���ʤ��ä���ʬ�����ߤȤ��ƻĤ롣
-			 * wipe_hook �ǥ��������õ�� text_hook �ǽ�ľ����
+			 * 元の文字の描画範囲がカーソルより小さいと、
+			 * 上書きされなかった部分がゴミとして残る。
+			 * wipe_hook でカーソルを消去して text_hook で書き直す。
 			 */
  			else if (old_aa[tx] || Term->always_text)
  			{
@@ -2090,8 +2090,8 @@ errr Term_erase(int x, int y, int n)
 
 #ifdef JP
 	/*
-	 * ����ʸ���α�Ⱦʬ����ʸ����ɽ�������硢
-	 * �Ťʤä�ʸ���κ���ʬ��õ
+	 * 全角文字の右半分から文字を表示する場合、
+	 * 重なった文字の左部分を消去。
 	 */
 	if (n > 0 && (((scr_aa[x] & AF_KANJI2) && !(scr_aa[x] & AF_TILE1))
 		      || (scr_aa[x] & AF_BIGTILE2) == AF_BIGTILE2))
@@ -2114,11 +2114,11 @@ errr Term_erase(int x, int y, int n)
 
 #ifdef JP
 		/*
-		 * ����ʸ���κ�Ⱦʬ��ɽ����λ�����硢
-		 * �Ťʤä�ʸ���α���ʬ��õ
+		 * 全角文字の左半分で表示を終了する場合、
+		 * 重なった文字の右部分を消去。
 		 *
 		 * 2001/04/29 -- Habu
-		 * �Ԥα�ü�ξ��Ϥ��ν����򤷤ʤ��褦�˽�����
+		 * 行の右端の場合はこの処理をしないように修正。
 		 */
 		if ((oa & AF_KANJI1) && (i + 1) == n && x != w - 1)
 			n++;

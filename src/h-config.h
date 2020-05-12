@@ -1,10 +1,10 @@
 /*!
  * @file h-config.h
- * @brief ÊÑ¶ò»şÄÉ²Ã¤µ¤ì¤¿´ğËÜ»ö¹à¤Î¥Ø¥Ã¥À¡¼¥Õ¥¡¥¤¥ë /
+ * @brief å¤‰æ„šæ™‚è¿½åŠ ã•ã‚ŒãŸåŸºæœ¬äº‹é …ã®ãƒ˜ãƒƒãƒ€ãƒ¼ãƒ•ã‚¡ã‚¤ãƒ« /
  * The most basic "include" file. This file simply includes other low level header files.
  * @date 2014/08/15
  * @author
- * ÉÔÌÀ(ÊÑ¶òÈÚÅÜ¥¹¥¿¥Ã¥Õ¡©)
+ * ä¸æ˜(å¤‰æ„šè›®æ€’ã‚¹ã‚¿ãƒƒãƒ•ï¼Ÿ)
  * @details
  * <pre>
  * Choose the hardware, operating system, and compiler.

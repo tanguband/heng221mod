@@ -1,6 +1,6 @@
 /*!
  * @file externs.h
- * @brief Angband(ÊÑ¶òÈÚÅÜ)´ğËÜ´Ø¿ô¡¢¥°¥í¡¼¥Ğ¥ëÊÑ¿ô¥Ø¥Ã¥À¥Õ¥¡¥¤¥ë / 
+ * @brief Angband(å¤‰æ„šè›®æ€’)åŸºæœ¬é–¢æ•°ã€ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°ãƒ˜ãƒƒãƒ€ãƒ•ã‚¡ã‚¤ãƒ« / 
  * extern declarations (variables and functions)
  * @date 2014/08/08
  * @author

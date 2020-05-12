@@ -1,10 +1,10 @@
 /*!
  * @file h-type.h
- * @brief ¥²¡¼¥àÃæ¤ËÍÑ¤¤¤ëÊÑ¿ô·¿ÄêµÁ /
+ * @brief ã‚²ãƒ¼ãƒ ä¸­ã«ç”¨ã„ã‚‹å¤‰æ•°å‹å®šç¾© /
  * Basic "types".
  * @date 2014/08/17
  * @author
- * ÉÔÌÀ(ÊÑ¶òÈÚÅÜ¥¹¥¿¥Ã¥Õ¡©)
+ * ä¸æ˜(å¤‰æ„šè›®æ€’ã‚¹ã‚¿ãƒƒãƒ•ï¼Ÿ)
  * @details
  * <pre>
  * Note the attempt to make all basic types have 4 letters.
@@ -42,30 +42,30 @@
 
 /*** Special 4 letter names for some standard types ***/
 
-typedef void *vptr;       /*!< void·¿¥İ¥¤¥ó¥¿ÄêµÁ / A standard pointer (to "void" because ANSI C says so) */
-typedef const char *cptr; /*!< Ê¸»úÎóÄê¿ôÍÑ¥İ¥¤¥ó¥¿ÄêµÁ / A simple pointer (to unmodifiable strings) */
-typedef double real;      /*!< double¤òreal·¿¤È¤·¤ÆÄêµÁ / Since float's are silly, hard code real numbers as doubles */
+typedef void *vptr;       /*!< voidå‹ãƒã‚¤ãƒ³ã‚¿å®šç¾© / A standard pointer (to "void" because ANSI C says so) */
+typedef const char *cptr; /*!< æ–‡å­—åˆ—å®šæ•°ç”¨ãƒã‚¤ãƒ³ã‚¿å®šç¾© / A simple pointer (to unmodifiable strings) */
+typedef double real;      /*!< doubleã‚’realå‹ã¨ã—ã¦å®šç¾© / Since float's are silly, hard code real numbers as doubles */
 
 
 /*!
- * @brief ¥¨¥é¡¼¥³¡¼¥É¤ÎÄêµÁ / Error codes for function return values
+ * @brief ã‚¨ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰ã®å®šç¾© / Error codes for function return values
  * @details
- * °ìÈÌ¤ËÀ®¸ù»ş0¡¢¼ºÇÔ»şÉé¿ô¡¢²¿¤é¤«¤ÎÌäÂê»şÀ°¿ô¤È¤¹¤ë¡£
+ * ä¸€èˆ¬ã«æˆåŠŸæ™‚0ã€å¤±æ•—æ™‚è² æ•°ã€ä½•ã‚‰ã‹ã®å•é¡Œæ™‚æ•´æ•°ã¨ã™ã‚‹ã€‚
  * Success = 0, Failure = -N, Problem = +N 
  */
 typedef int errr;
 
 #undef uint
-#define uint uint_hack /*!< Èó¥Ş¥Ã¥­¥ó¥È¥Ã¥·¥å´Ä¶­¤Ç½ÅÊ£¤òÈò¤±¤ë¤¿¤á¤Îuint_hack·¿ÄêµÁ / Hack -- prevent problems with non-MACINTOSH */
+#define uint uint_hack /*!< éãƒãƒƒã‚­ãƒ³ãƒˆãƒƒã‚·ãƒ¥ç’°å¢ƒã§é‡è¤‡ã‚’é¿ã‘ã‚‹ãŸã‚ã®uint_hackå‹å®šç¾© / Hack -- prevent problems with non-MACINTOSH */
 
 #undef huge
-#define huge huge_hack /*!< WINDOWS´Ä¶­¤Ç½ÅÊ£¤òÈò¤±¤ë¤¿¤á¤Îhuge_hackÄêµÁ / Hack -- prevent problems with WINDOWS */
+#define huge huge_hack /*!< WINDOWSç’°å¢ƒã§é‡è¤‡ã‚’é¿ã‘ã‚‹ãŸã‚ã®huge_hackå®šç¾© / Hack -- prevent problems with WINDOWS */
 
 #undef byte
-#define byte byte_hack /*!< AMIGA´Ä¶­¤Ç½ÅÊ£¤òÈò¤±¤ë¤¿¤á¤Îbyte_hackÄêµÁ / Hack -- prevent problems with AMIGA */
+#define byte byte_hack /*!< AMIGAç’°å¢ƒã§é‡è¤‡ã‚’é¿ã‘ã‚‹ãŸã‚ã®byte_hackå®šç¾© / Hack -- prevent problems with AMIGA */
 
 #undef bool
-#define bool bool_hack /*!< C++´Ä¶­¤Ç½ÅÊ£¤òÈò¤±¤ë¤¿¤á¤Îbool_hackÄêµÁ Hack -- prevent problems with C++ */
+#define bool bool_hack /*!< C++ç’°å¢ƒã§é‡è¤‡ã‚’é¿ã‘ã‚‹ãŸã‚ã®bool_hackå®šç¾© Hack -- prevent problems with C++ */
 
 
 /* Note that "signed char" is not always "defined" */
@@ -73,10 +73,10 @@ typedef int errr;
 /* A signed byte of memory */
 /* typedef signed char syte; */
 
-typedef unsigned char byte; /*!< byte·¿¤òunsighned char¤È¤·¤ÆÄêµÁ / Note that unsigned values can cause math problems / An unsigned byte of memory */
-typedef char bool; /*!< bool·¿¤òchar¤È¤·¤ÆÄêµÁ / Note that a bool is smaller than a full "int" / Simple True/False type */
-typedef int sint; /*!< sint·¿¤òint¤È¤·¤ÆÄêµÁ / A signed, standard integer (at least 2 bytes) */
-typedef unsigned int uint; /* uint·¿¤òint¤È¤·¤ÆÄêµÁ /  An unsigned, "standard" integer (often pre-defined) */
+typedef unsigned char byte; /*!< byteå‹ã‚’unsighned charã¨ã—ã¦å®šç¾© / Note that unsigned values can cause math problems / An unsigned byte of memory */
+typedef char bool; /*!< boolå‹ã‚’charã¨ã—ã¦å®šç¾© / Note that a bool is smaller than a full "int" / Simple True/False type */
+typedef int sint; /*!< sintå‹ã‚’intã¨ã—ã¦å®šç¾© / A signed, standard integer (at least 2 bytes) */
+typedef unsigned int uint; /* uintå‹ã‚’intã¨ã—ã¦å®šç¾© /  An unsigned, "standard" integer (often pre-defined) */
 
 /* The largest possible signed integer (pre-defined) */
 /* typedef long long; */

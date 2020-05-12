@@ -1,6 +1,6 @@
 /*!
  * @file types.h
- * @brief ¥°¥í¡¼¥Ğ¥ë¤Ê¹½Â¤ÂÎ¤ÎÄêµÁ / global type declarations
+ * @brief ã‚°ãƒ­ãƒ¼ãƒãƒ«ãªæ§‹é€ ä½“ã®å®šç¾© / global type declarations
  * @date 2014/08/10
  * @author
  * <pre>
@@ -11,7 +11,7 @@
  * </pre>
  * @details
  * <pre>
- * ¤³¤Î¥Õ¥¡¥¤¥ë¤Ïangband.h¤Ç¤Î¤ß¥¤¥ó¥¯¥ë¡¼¥É¤¹¤ë¤³¤È¡£
+ * ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¯angband.hã§ã®ã¿ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã™ã‚‹ã“ã¨ã€‚
  * This file should ONLY be included by "angband.h"
  *
  * Note that "char" may or may not be signed, and that "signed char"
@@ -46,55 +46,55 @@
 
 /*!
  * @struct feature_state
- * @brief ÃÏ·Á¾õÂÖÊÑ²½»ØÄê¹½Â¤ÂÎ / Feature state structure
+ * @brief åœ°å½¢çŠ¶æ…‹å¤‰åŒ–æŒ‡å®šæ§‹é€ ä½“ / Feature state structure
  */
 typedef struct feature_state feature_state;
 
 struct feature_state
 {
-	byte action; /*!< ÊÑ²½¾ò·ï¤òFF_*¤ÎID¤Ç»ØÄê / Action (FF_*) */
-	s16b result; /*!< ÊÑ²½ÀèID / Result (f_info ID) */
+	byte action; /*!< å¤‰åŒ–æ¡ä»¶ã‚’FF_*ã®IDã§æŒ‡å®š / Action (FF_*) */
+	s16b result; /*!< å¤‰åŒ–å…ˆID / Result (f_info ID) */
 };
 
 
 /*!
  * @struct feature_type
- * @brief ÃÏ·Á¾ğÊó¤Î¹½Â¤ÂÎ / Information about terrain "features"
+ * @brief åœ°å½¢æƒ…å ±ã®æ§‹é€ ä½“ / Information about terrain "features"
  */
 
 typedef struct feature_type feature_type;
 
 struct feature_type
 {
-	u32b name;                /*!< ÃÏ·ÁÌ¾»²¾È¤Î¤¿¤á¤Î¥Í¡¼¥à¥Ğ¥Ã¥Õ¥¡¥ª¥Õ¥»¥Ã¥ÈÃÍ / Name (offset) */
-	u32b text;                /*!< ÃÏ·ÁÀâÌÀ»²¾È¤Î¤¿¤á¤Î¥Í¡¼¥à¥Ğ¥Ã¥Õ¥¡¥ª¥Õ¥»¥Ã¥ÈÃÍ /  Text (offset) */
-	s16b tag;                 /*!< ÃÏ·ÁÆÃÀ­¥¿¥°»²¾È¤Î¤¿¤á¤Î¥Í¡¼¥à¥Ğ¥Ã¥Õ¥¡¥ª¥Õ¥»¥Ã¥ÈÃÍ /  Tag (offset) */
+	u32b name;                /*!< åœ°å½¢åå‚ç…§ã®ãŸã‚ã®ãƒãƒ¼ãƒ ãƒãƒƒãƒ•ã‚¡ã‚ªãƒ•ã‚»ãƒƒãƒˆå€¤ / Name (offset) */
+	u32b text;                /*!< åœ°å½¢èª¬æ˜å‚ç…§ã®ãŸã‚ã®ãƒãƒ¼ãƒ ãƒãƒƒãƒ•ã‚¡ã‚ªãƒ•ã‚»ãƒƒãƒˆå€¤ /  Text (offset) */
+	s16b tag;                 /*!< åœ°å½¢ç‰¹æ€§ã‚¿ã‚°å‚ç…§ã®ãŸã‚ã®ãƒãƒ¼ãƒ ãƒãƒƒãƒ•ã‚¡ã‚ªãƒ•ã‚»ãƒƒãƒˆå€¤ /  Tag (offset) */
 
-	s16b mimic;               /*!< Ì¤³ÎÄê»ş¤Î³°·ÁÃÏ·ÁID / Feature to mimic */
+	s16b mimic;               /*!< æœªç¢ºå®šæ™‚ã®å¤–å½¢åœ°å½¢ID / Feature to mimic */
 
-	u32b flags[FF_FLAG_SIZE]; /*!< ÃÏ·Á¤Î´ğËÜÆÃÀ­¥Ó¥Ã¥ÈÇÛÎó / Flags */
+	u32b flags[FF_FLAG_SIZE]; /*!< åœ°å½¢ã®åŸºæœ¬ç‰¹æ€§ãƒ“ãƒƒãƒˆé…åˆ— / Flags */
 
-	u16b priority;            /*!< ½Ì¾®É½¼¨¤Ç¾ÊÎ¬¤¹¤ëºİ¤ÎÉ½¼¨Í¥ÀèÅÙ / Map priority */
-	s16b destroyed;           /*!< *ÇË²õ*¤Ë´¬¤­¹ş¤Ş¤ì¤¿»ş¤ÎÃÏ·Á°Ü¹ÔÀè(Ì¤¼ÂÁõ¡©) / Default destroyed state */
+	u16b priority;            /*!< ç¸®å°è¡¨ç¤ºã§çœç•¥ã™ã‚‹éš›ã®è¡¨ç¤ºå„ªå…ˆåº¦ / Map priority */
+	s16b destroyed;           /*!< *ç ´å£Š*ã«å·»ãè¾¼ã¾ã‚ŒãŸæ™‚ã®åœ°å½¢ç§»è¡Œå…ˆ(æœªå®Ÿè£…ï¼Ÿ) / Default destroyed state */
 
-	feature_state state[MAX_FEAT_STATES]; /*!< feature_state ¥Æ¡¼¥Ö¥ë */
+	feature_state state[MAX_FEAT_STATES]; /*!< feature_state ãƒ†ãƒ¼ãƒ–ãƒ« */
 
-	byte subtype;  /*!< ÉûÆÃÀ­ÃÍ */
-	byte power;    /*!< ÃÏ·Á¶¯ÅÙ */
+	byte subtype;  /*!< å‰¯ç‰¹æ€§å€¤ */
+	byte power;    /*!< åœ°å½¢å¼·åº¦ */
 
-	byte d_attr[F_LIT_MAX];   /*!< ¥Ç¥Õ¥©¥ë¥È¤ÎÃÏ·Á¥·¥ó¥Ü¥ë¥«¥é¡¼ / Default feature attribute */
-	byte d_char[F_LIT_MAX];   /*!< ¥Ç¥Õ¥©¥ë¥È¤ÎÃÏ·Á¥·¥ó¥Ü¥ë¥¢¥ë¥Õ¥¡¥Ù¥Ã¥È / Default feature character */
+	byte d_attr[F_LIT_MAX];   /*!< ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®åœ°å½¢ã‚·ãƒ³ãƒœãƒ«ã‚«ãƒ©ãƒ¼ / Default feature attribute */
+	byte d_char[F_LIT_MAX];   /*!< ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®åœ°å½¢ã‚·ãƒ³ãƒœãƒ«ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ / Default feature character */
 
-	byte x_attr[F_LIT_MAX];   /*!< ÀßÄêÊÑ¹¹¸å¤ÎÃÏ·Á¥·¥ó¥Ü¥ë¥«¥é¡¼ / Desired feature attribute */
-	byte x_char[F_LIT_MAX];   /*!< ÀßÄêÊÑ¹¹¸å¤ÎÃÏ·Á¥·¥ó¥Ü¥ë¥¢¥ë¥Õ¥¡¥Ù¥Ã¥È / Desired feature character */
+	byte x_attr[F_LIT_MAX];   /*!< è¨­å®šå¤‰æ›´å¾Œã®åœ°å½¢ã‚·ãƒ³ãƒœãƒ«ã‚«ãƒ©ãƒ¼ / Desired feature attribute */
+	byte x_char[F_LIT_MAX];   /*!< è¨­å®šå¤‰æ›´å¾Œã®åœ°å½¢ã‚·ãƒ³ãƒœãƒ«ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ / Desired feature character */
 };
 
 
 /*!
  * @struct object_kind
- * @brief ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¾ğÊó¤Î¹½Â¤ÂÎ / Information about object "kinds", including player knowledge.
+ * @brief ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ æƒ…å ±ã®æ§‹é€ ä½“ / Information about object "kinds", including player knowledge.
  * @details
- * ¥²¡¼¥à¿Ê¹ÔÍÑ¤Î¥»¡¼¥Ö¥Õ¥¡¥¤¥ë¾å¤Ç¤Ï aware ¤È tried ¤Î¤ßÊİÂ¸ÂĞ¾İ¤È¤¹¤ë¤³¤È¡£¤È±ÑÊ¸¤Ç¤Ï¤¢¤ë¤¬¼Âºİ¤Ï¤â¤Ã¤È¤¢¤ëÍÍ»Ò¤Ç¤¢¤ë¡£ /
+ * ã‚²ãƒ¼ãƒ é€²è¡Œç”¨ã®ã‚»ãƒ¼ãƒ–ãƒ•ã‚¡ã‚¤ãƒ«ä¸Šã§ã¯ aware ã¨ tried ã®ã¿ä¿å­˜å¯¾è±¡ã¨ã™ã‚‹ã“ã¨ã€‚ã¨è‹±æ–‡ã§ã¯ã‚ã‚‹ãŒå®Ÿéš›ã¯ã‚‚ã£ã¨ã‚ã‚‹æ§˜å­ã§ã‚ã‚‹ã€‚ /
  * Only "aware" and "tried" are saved in the savefile
  */
 
@@ -102,52 +102,52 @@ typedef struct object_kind object_kind;
 
 struct object_kind
 {
-	u32b name;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥àÌ¾»²¾È¤Î¤¿¤á¤Î¥Í¡¼¥à¥Ğ¥Ã¥Õ¥¡¥ª¥Õ¥»¥Ã¥ÈÃÍ / Name (offset) */
-	u32b text;			/*!< ²òÀâ¥Æ¥­¥¹¥È»²¾È¤Î¤¿¤á¤Î¥Í¡¼¥à¥Ğ¥Ã¥Õ¥¡¥ª¥Õ¥»¥Ã¥ÈÃÍ / Text (offset) */
-	u32b flavor_name;	/*!< Ì¤³ÎÄêÌ¾»²¾È¤Î¤¿¤á¤Î¥Í¡¼¥à¥Ğ¥Ã¥Õ¥¡¥ª¥Õ¥»¥Ã¥ÈÃÍ / Flavor name (offset) */
+	u32b name;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ åå‚ç…§ã®ãŸã‚ã®ãƒãƒ¼ãƒ ãƒãƒƒãƒ•ã‚¡ã‚ªãƒ•ã‚»ãƒƒãƒˆå€¤ / Name (offset) */
+	u32b text;			/*!< è§£èª¬ãƒ†ã‚­ã‚¹ãƒˆå‚ç…§ã®ãŸã‚ã®ãƒãƒ¼ãƒ ãƒãƒƒãƒ•ã‚¡ã‚ªãƒ•ã‚»ãƒƒãƒˆå€¤ / Text (offset) */
+	u32b flavor_name;	/*!< æœªç¢ºå®šåå‚ç…§ã®ãŸã‚ã®ãƒãƒ¼ãƒ ãƒãƒƒãƒ•ã‚¡ã‚ªãƒ•ã‚»ãƒƒãƒˆå€¤ / Flavor name (offset) */
 
-	byte tval;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¼ïÊÌ¤ÎÂç¹àÌÜÃÍ Object type */
-	byte sval;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¼ïÊÌ¤Î¾®¹àÌÜÃÍ Object sub type */
+	byte tval;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ç¨®åˆ¥ã®å¤§é …ç›®å€¤ Object type */
+	byte sval;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ç¨®åˆ¥ã®å°é …ç›®å€¤ Object sub type */
 
-	s16b pval;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤Îpval¡ÊÇ½ÎÏ½¤Àµ¶¦ÄÌÃÍ¡Ë Object extra info */
+	s16b pval;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ã®pvalï¼ˆèƒ½åŠ›ä¿®æ­£å…±é€šå€¤ï¼‰ Object extra info */
 
-	s16b to_h;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤ÎÌ¿Ãæ½¤ÀµÃÍ / Bonus to hit */
-	s16b to_d;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤Î¥À¥á¡¼¥¸½¤ÀµÃÍ / Bonus to damage */
-	s16b to_a;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤ÎAC½¤ÀµÃÍ / Bonus to armor */
+	s16b to_h;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ã®å‘½ä¸­ä¿®æ­£å€¤ / Bonus to hit */
+	s16b to_d;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ä¿®æ­£å€¤ / Bonus to damage */
+	s16b to_a;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ã®ACä¿®æ­£å€¤ / Bonus to armor */
 
-	s16b ac;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤ÎAC´ğËÜÃÍ /  Base armor */
+	s16b ac;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ã®ACåŸºæœ¬å€¤ /  Base armor */
 
-	byte dd, ds;		/*!< ¥À¥á¡¼¥¸¥À¥¤¥¹¤Î¿ô¤ÈÂç¤­¤µ / Damage dice/sides */
+	byte dd, ds;		/*!< ãƒ€ãƒ¡ãƒ¼ã‚¸ãƒ€ã‚¤ã‚¹ã®æ•°ã¨å¤§ãã• / Damage dice/sides */
 
-	s16b weight;		/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤Î½ÅÎÌ / Weight */
+	s16b weight;		/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ã®é‡é‡ / Weight */
 
-	s32b cost;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤Î´ğËÜ²ÁÃÍ / Object "base cost" */
+	s32b cost;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ã®åŸºæœ¬ä¾¡å€¤ / Object "base cost" */
 
-	u32b flags[TR_FLAG_SIZE];	/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤Î´ğËÜÆÃÀ­¥Ó¥Ã¥ÈÇÛÎó / Flags */
+	u32b flags[TR_FLAG_SIZE];	/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ã®åŸºæœ¬ç‰¹æ€§ãƒ“ãƒƒãƒˆé…åˆ— / Flags */
 
-	u32b gen_flags;		/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤ÎÀ¸À®ÆÃÀ­¥Ó¥Ã¥ÈÇÛÎó / flags for generate */
+	u32b gen_flags;		/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ã®ç”Ÿæˆç‰¹æ€§ãƒ“ãƒƒãƒˆé…åˆ— / flags for generate */
 
-	byte locale[4];		/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤ÎÀ¸À®³¬¥Æ¡¼¥Ö¥ë / Allocation level(s) */
-	byte chance[4];		/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤ÎÀ¸À®³ÎÎ¨¥Æ¡¼¥Ö¥ë / Allocation chance(s) */
+	byte locale[4];		/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ã®ç”Ÿæˆéšãƒ†ãƒ¼ãƒ–ãƒ« / Allocation level(s) */
+	byte chance[4];		/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ã®ç”Ÿæˆç¢ºç‡ãƒ†ãƒ¼ãƒ–ãƒ« / Allocation chance(s) */
 
-	byte level;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤Î´ğËÜÀ¸À®³¬ / Level */
-	byte extra;			/*!< ¤½¤ÎÂ¾¿§¡¹¤Î¥Ó¥Ã¥È¥Õ¥é¥°ÇÛÎó / Something */
+	byte level;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ã®åŸºæœ¬ç”Ÿæˆéš / Level */
+	byte extra;			/*!< ãã®ä»–è‰²ã€…ã®ãƒ“ãƒƒãƒˆãƒ•ãƒ©ã‚°é…åˆ— / Something */
 
-	byte d_attr;		/*!< ¥Ç¥Õ¥©¥ë¥È¤Î¥¢¥¤¥Æ¥à¥·¥ó¥Ü¥ë¥«¥é¡¼ / Default object attribute */
-	byte d_char;		/*!< ¥Ç¥Õ¥©¥ë¥È¤Î¥¢¥¤¥Æ¥à¥·¥ó¥Ü¥ë¥¢¥ë¥Õ¥¡¥Ù¥Ã¥È / Default object character */
+	byte d_attr;		/*!< ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚¢ã‚¤ãƒ†ãƒ ã‚·ãƒ³ãƒœãƒ«ã‚«ãƒ©ãƒ¼ / Default object attribute */
+	byte d_char;		/*!< ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚¢ã‚¤ãƒ†ãƒ ã‚·ãƒ³ãƒœãƒ«ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ / Default object character */
 
-	byte x_attr;		/*!< ÀßÄêÊÑ¹¹¸å¤Î¥¢¥¤¥Æ¥à¥·¥ó¥Ü¥ë¥«¥é¡¼ /  Desired object attribute */
-	byte x_char;		/*!< ÀßÄêÊÑ¹¹¸å¤Î¥¢¥¤¥Æ¥à¥·¥ó¥Ü¥ë¥¢¥ë¥Õ¥¡¥Ù¥Ã¥È /  Desired object character */
+	byte x_attr;		/*!< è¨­å®šå¤‰æ›´å¾Œã®ã‚¢ã‚¤ãƒ†ãƒ ã‚·ãƒ³ãƒœãƒ«ã‚«ãƒ©ãƒ¼ /  Desired object attribute */
+	byte x_char;		/*!< è¨­å®šå¤‰æ›´å¾Œã®ã‚¢ã‚¤ãƒ†ãƒ ã‚·ãƒ³ãƒœãƒ«ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ /  Desired object character */
 
-	s16b flavor;		/*!< Ä´ººÃæ(TODO) / Special object flavor (or zero) */
+	s16b flavor;		/*!< èª¿æŸ»ä¸­(TODO) / Special object flavor (or zero) */
 
-	bool easy_know;		/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤¬½é´ü¤«¤é¥Ù¡¼¥¹Ì¾¤òÈ½ÃÇ²ÄÇ½¤«¤É¤¦¤« / This object is always known (if aware) */
+	bool easy_know;		/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ãŒåˆæœŸã‹ã‚‰ãƒ™ãƒ¼ã‚¹åã‚’åˆ¤æ–­å¯èƒ½ã‹ã©ã†ã‹ / This object is always known (if aware) */
 
-	bool aware;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤¬´ÕÄêºÑ¤«¤É¤¦¤« /  The player is "aware" of the item's effects */
+	bool aware;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ãŒé‘‘å®šæ¸ˆã‹ã©ã†ã‹ /  The player is "aware" of the item's effects */
 
-	bool tried;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¤òÌ¤´ÕÄê¤Î¤Ş¤Ş»î¤·¤¿¤³¤È¤¬¤¢¤ë¤« /  The player has "tried" one of the items */
+	bool tried;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ ã‚’æœªé‘‘å®šã®ã¾ã¾è©¦ã—ãŸã“ã¨ãŒã‚ã‚‹ã‹ /  The player has "tried" one of the items */
 
-	byte act_idx;		/*!< È¯Æ°Ç½ÎÏ¤ÎID /  Activative ability index */
+	byte act_idx;		/*!< ç™ºå‹•èƒ½åŠ›ã®ID /  Activative ability index */
 };
 
 
@@ -156,7 +156,7 @@ typedef struct artifact_type artifact_type;
 
 /*!
  * @struct artifact_type
- * @brief ¸ÇÄê¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¾ğÊó¤Î¹½Â¤ÂÎ / Artifact structure.
+ * @brief å›ºå®šã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆæƒ…å ±ã®æ§‹é€ ä½“ / Artifact structure.
  * @details
  * @note
  * the save-file only writes "cur_num" to the savefile.
@@ -164,39 +164,39 @@ typedef struct artifact_type artifact_type;
  */
 struct artifact_type
 {
-	u32b name;			/*!< ¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥ÈÌ¾(header¥ª¥Õ¥»¥Ã¥È»²¾È) / Name (offset) */
-	u32b text;			/*!< ¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È²òÀâ(header¥ª¥Õ¥»¥Ã¥È»²¾È) / Text (offset) */
+	u32b name;			/*!< ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆå(headerã‚ªãƒ•ã‚»ãƒƒãƒˆå‚ç…§) / Name (offset) */
+	u32b text;			/*!< ã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆè§£èª¬(headerã‚ªãƒ•ã‚»ãƒƒãƒˆå‚ç…§) / Text (offset) */
 
-	byte tval;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥àÂç¹àÌÜID / Artifact type */
-	byte sval;			/*!< ¥Ù¡¼¥¹¥¢¥¤¥Æ¥à¾®¹àÌÜID / Artifact sub type */
+	byte tval;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ å¤§é …ç›®ID / Artifact type */
+	byte sval;			/*!< ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¤ãƒ†ãƒ å°é …ç›®ID / Artifact sub type */
 
-	s16b pval;			/*!< pval½¤ÀµÃÍ / Artifact extra info */
+	s16b pval;			/*!< pvalä¿®æ­£å€¤ / Artifact extra info */
 
-	s16b to_h;			/*!< Ì¿Ãæ¥Ü¡¼¥Ê¥¹ÃÍ /  Bonus to hit */
-	s16b to_d;			/*!< ¥À¥á¡¼¥¸¥Ü¡¼¥Ê¥¹ÃÍ / Bonus to damage */
-	s16b to_a;			/*!< AC¥Ü¡¼¥Ê¥¹ÃÍ / Bonus to armor */
+	s16b to_h;			/*!< å‘½ä¸­ãƒœãƒ¼ãƒŠã‚¹å€¤ /  Bonus to hit */
+	s16b to_d;			/*!< ãƒ€ãƒ¡ãƒ¼ã‚¸ãƒœãƒ¼ãƒŠã‚¹å€¤ / Bonus to damage */
+	s16b to_a;			/*!< ACãƒœãƒ¼ãƒŠã‚¹å€¤ / Bonus to armor */
 
-	s16b ac;			/*!< ¾å½ñ¤­¥Ù¡¼¥¹ACÃÍ / Base armor */
+	s16b ac;			/*!< ä¸Šæ›¸ããƒ™ãƒ¼ã‚¹ACå€¤ / Base armor */
 
-	byte dd, ds;		/*!< ¥À¥¤¥¹ÃÍ / Damage when hits */
+	byte dd, ds;		/*!< ãƒ€ã‚¤ã‚¹å€¤ / Damage when hits */
 
-	s16b weight;		/*!< ½ÅÎÌ / Weight */
+	s16b weight;		/*!< é‡é‡ / Weight */
 
-	s32b cost;			/*!< ´ğËÜ²Á³Ê / Artifact "cost" */
+	s32b cost;			/*!< åŸºæœ¬ä¾¡æ ¼ / Artifact "cost" */
 
-	u32b flags[TR_FLAG_SIZE];       /*! ¥¢¥¤¥Æ¥à¥Õ¥é¥° / Artifact Flags */
+	u32b flags[TR_FLAG_SIZE];       /*! ã‚¢ã‚¤ãƒ†ãƒ ãƒ•ãƒ©ã‚° / Artifact Flags */
 
-	u32b gen_flags;		/*! ¥¢¥¤¥Æ¥àÀ¸À®¥Õ¥é¥° / flags for generate */
+	u32b gen_flags;		/*! ã‚¢ã‚¤ãƒ†ãƒ ç”Ÿæˆãƒ•ãƒ©ã‚° / flags for generate */
 
-	byte level;			/*! ´ğËÜÀ¸À®³¬ / Artifact level */
-	byte rarity;		/*! ¥ì¥¢¥ê¥Æ¥£ / Artifact rarity */
+	byte level;			/*! åŸºæœ¬ç”Ÿæˆéš / Artifact level */
+	byte rarity;		/*! ãƒ¬ã‚¢ãƒªãƒ†ã‚£ / Artifact rarity */
 
-	byte cur_num;		/*! ¸½ºß¤ÎÀ¸À®¿ô / Number created (0 or 1) */
-	byte max_num;		/*! (Ì¤»ÈÍÑ)ºÇÂçÀ¸À®¿ô / Unused (should be "1") */
+	byte cur_num;		/*! ç¾åœ¨ã®ç”Ÿæˆæ•° / Number created (0 or 1) */
+	byte max_num;		/*! (æœªä½¿ç”¨)æœ€å¤§ç”Ÿæˆæ•° / Unused (should be "1") */
 
-	s16b floor_id;      /*! ¥¢¥¤¥Æ¥à¤òÍî¤È¤·¤¿¥Õ¥í¥¢¤ÎID / Leaved on this location last time */
+	s16b floor_id;      /*! ã‚¢ã‚¤ãƒ†ãƒ ã‚’è½ã¨ã—ãŸãƒ•ãƒ­ã‚¢ã®ID / Leaved on this location last time */
 
-	byte act_idx;		/*! È¯Æ°Ç½ÎÏID / Activative ability index */
+	byte act_idx;		/*! ç™ºå‹•èƒ½åŠ›ID / Activative ability index */
 };
 
 
@@ -289,26 +289,26 @@ typedef struct monster_race monster_race;
 
 struct monster_race
 {
-	u32b name;				/*!< Ì¾Á°¥Ç¡¼¥¿¤Î¥ª¥Õ¥»¥Ã¥È(ÆüËÜ¸ì) /  Name offset(Japanese) */
+	u32b name;				/*!< åå‰ãƒ‡ãƒ¼ã‚¿ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ(æ—¥æœ¬èª) /  Name offset(Japanese) */
 #ifdef JP
-	u32b E_name;            /*!< Ì¾Á°¥Ç¡¼¥¿¤Î¥ª¥Õ¥»¥Ã¥È(±Ñ¸ì) /  Name offset(English) */
+	u32b E_name;            /*!< åå‰ãƒ‡ãƒ¼ã‚¿ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ(è‹±èª) /  Name offset(English) */
 #endif
-	u32b text;				/*!< »×¤¤½Ğ¥Æ¥­¥¹¥È¤Î¥ª¥Õ¥»¥Ã¥È / Lore text offset */
+	u32b text;				/*!< æ€ã„å‡ºãƒ†ã‚­ã‚¹ãƒˆã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ / Lore text offset */
 
-	byte hdice;				/*!< HP¤Î¥À¥¤¥¹¿ô / Creatures hit dice count */
-	byte hside;				/*!< HP¤Î¥À¥¤¥¹ÌÌ¿ô / Creatures hit dice sides */
+	byte hdice;				/*!< HPã®ãƒ€ã‚¤ã‚¹æ•° / Creatures hit dice count */
+	byte hside;				/*!< HPã®ãƒ€ã‚¤ã‚¹é¢æ•° / Creatures hit dice sides */
 
-	s16b ac;				/*!< ¥¢¡¼¥Ş¡¼¥¯¥é¥¹ / Armour Class */
+	s16b ac;				/*!< ã‚¢ãƒ¼ãƒãƒ¼ã‚¯ãƒ©ã‚¹ / Armour Class */
 
-	s16b sleep;				/*!< ¿çÌ²ÃÍ / Inactive counter (base) */
-	byte aaf;				/*!< ´¶ÃÎÈÏ°Ï(1-100¥¹¥¯¥¨¥¢) / Area affect radius (1-100) */
-	byte speed;				/*!< ²ÃÂ®(110¤Ç+0) / Speed (normally 110) */
+	s16b sleep;				/*!< ç¡çœ å€¤ / Inactive counter (base) */
+	byte aaf;				/*!< æ„ŸçŸ¥ç¯„å›²(1-100ã‚¹ã‚¯ã‚¨ã‚¢) / Area affect radius (1-100) */
+	byte speed;				/*!< åŠ é€Ÿ(110ã§+0) / Speed (normally 110) */
 
-	s32b mexp;				/*!< »¦³²»ş´ğËÜ·Ğ¸³ÃÍ / Exp value for kill */
+	s32b mexp;				/*!< æ®ºå®³æ™‚åŸºæœ¬çµŒé¨“å€¤ / Exp value for kill */
 
-	s16b extra;				/*!< Ì¤»ÈÍÑ /  Unused (for now) */
+	s16b extra;				/*!< æœªä½¿ç”¨ /  Unused (for now) */
 
-	byte freq_spell;		/*!< ËâË¡¡õÆÃ¼ìÇ½ÎÏ»ÅÍÍÉÑÅÙ(1/n) /  Spell frequency */
+	byte freq_spell;		/*!< é­”æ³•ï¼†ç‰¹æ®Šèƒ½åŠ›ä»•æ§˜é »åº¦(1/n) /  Spell frequency */
 
 	u32b flags1;			/* Flags 1 (general) */
 	u32b flags2;			/* Flags 2 (abilities) */
@@ -329,11 +329,11 @@ struct monster_race
 	u16b reinforce_dd[6];
 	u16b reinforce_ds[6];
 
-	u16b artifact_id[4];	/* ÆÃÄê¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¥É¥í¥Ã¥×ID */
-	u16b artifact_rarity[4];	/* ÆÃÄê¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¥ì¥¢ÅÙ */
-	u16b artifact_percent[4]; /* ÆÃÄê¥¢¡¼¥Æ¥£¥Õ¥¡¥¯¥È¥É¥í¥Ã¥×Î¨ */
+	u16b artifact_id[4];	/* ç‰¹å®šã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆãƒ‰ãƒ­ãƒƒãƒ—ID */
+	u16b artifact_rarity[4];	/* ç‰¹å®šã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆãƒ¬ã‚¢åº¦ */
+	u16b artifact_percent[4]; /* ç‰¹å®šã‚¢ãƒ¼ãƒ†ã‚£ãƒ•ã‚¡ã‚¯ãƒˆãƒ‰ãƒ­ãƒƒãƒ—ç‡ */
 
-	u32b arena_ratio;		/* ¥¢¥ê¡¼¥Ê¤ÎÉ¾²Á½¤ÀµÃÍ(%´ğ½à / 0=100%) / Arena */
+	u32b arena_ratio;		/* ã‚¢ãƒªãƒ¼ãƒŠã®è©•ä¾¡ä¿®æ­£å€¤(%åŸºæº– / 0=100%) / Arena */
 
 	s16b next_r_idx;
 	u32b next_exp;
@@ -689,30 +689,30 @@ typedef struct quest_type quest_type;
 
 /*!
  * @struct quest_type
- * @brief ¥¯¥¨¥¹¥È¾ğÊó¤Î¹½Â¤ÂÎ / Structure for the "quests".
+ * @brief ã‚¯ã‚¨ã‚¹ãƒˆæƒ…å ±ã®æ§‹é€ ä½“ / Structure for the "quests".
  */
 
 struct quest_type
 {
-	s16b status;            /*!< ¥¯¥¨¥¹¥È¤Î¿Ê¹Ô¥¹¥Æ¡¼¥¿¥¹ / Is the quest taken, completed, finished? */
+	s16b status;            /*!< ã‚¯ã‚¨ã‚¹ãƒˆã®é€²è¡Œã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ / Is the quest taken, completed, finished? */
 
-	s16b type;              /*!< ¥¯¥¨¥¹¥È¤Î¼ïÊÌ / The quest type */
+	s16b type;              /*!< ã‚¯ã‚¨ã‚¹ãƒˆã®ç¨®åˆ¥ / The quest type */
 
-	char name[60];          /*!< ¥¯¥¨¥¹¥ÈÌ¾ / Quest name */
-	s16b level;             /*!< ½èÍı³¬ÁØ / Dungeon level */
-	s16b r_idx;             /*!< ¥¯¥¨¥¹¥ÈÂĞ¾İ¤Î¥â¥ó¥¹¥¿¡¼ID / Monster race */
+	char name[60];          /*!< ã‚¯ã‚¨ã‚¹ãƒˆå / Quest name */
+	s16b level;             /*!< å‡¦ç†éšå±¤ / Dungeon level */
+	s16b r_idx;             /*!< ã‚¯ã‚¨ã‚¹ãƒˆå¯¾è±¡ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ID / Monster race */
 
-	s16b cur_num;           /*!< ·âÇË¤·¤¿¥â¥ó¥¹¥¿¡¼¤Î¿ô / Number killed */
-	s16b max_num;           /*!< µá¤á¤é¤ì¤ë¥â¥ó¥¹¥¿¡¼¤Î·âÇË¿ô / Number required */
+	s16b cur_num;           /*!< æ’ƒç ´ã—ãŸãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®æ•° / Number killed */
+	s16b max_num;           /*!< æ±‚ã‚ã‚‰ã‚Œã‚‹ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®æ’ƒç ´æ•° / Number required */
 
-	s16b k_idx;             /*!< ¥¯¥¨¥¹¥ÈÂĞ¾İ¤Î¥¢¥¤¥Æ¥àID / object index */
-	s16b num_mon;           /*!< QUEST_TYPE_KILL_NUMBER»ş¤ÎÌÜÉ¸·âÇË¿ô number of monsters on level */
+	s16b k_idx;             /*!< ã‚¯ã‚¨ã‚¹ãƒˆå¯¾è±¡ã®ã‚¢ã‚¤ãƒ†ãƒ ID / object index */
+	s16b num_mon;           /*!< QUEST_TYPE_KILL_NUMBERæ™‚ã®ç›®æ¨™æ’ƒç ´æ•° number of monsters on level */
 
-	byte flags;             /*!< ¥¯¥¨¥¹¥È¤Ë´Ø¤¹¤ë¥Õ¥é¥°¥Ó¥Ã¥È / quest flags */
-	byte dungeon;           /*!< ¥¯¥¨¥¹¥ÈÂĞ¾İ¤Î¥À¥ó¥¸¥ç¥óID / quest dungeon */
+	byte flags;             /*!< ã‚¯ã‚¨ã‚¹ãƒˆã«é–¢ã™ã‚‹ãƒ•ãƒ©ã‚°ãƒ“ãƒƒãƒˆ / quest flags */
+	byte dungeon;           /*!< ã‚¯ã‚¨ã‚¹ãƒˆå¯¾è±¡ã®ãƒ€ãƒ³ã‚¸ãƒ§ãƒ³ID / quest dungeon */
 
-	byte complev;           /*!< ¥¯¥ê¥¢»ş¥×¥ì¥¤¥ä¡¼¥ì¥Ù¥ë / player level (complete) */
-	u32b comptime;          /*!< ¥¯¥ê¥¢»ş¥²¡¼¥à»ş´Ö /  quest clear time*/
+	byte complev;           /*!< ã‚¯ãƒªã‚¢æ™‚ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒ¬ãƒ™ãƒ« / player level (complete) */
+	u32b comptime;          /*!< ã‚¯ãƒªã‚¢æ™‚ã‚²ãƒ¼ãƒ æ™‚é–“ /  quest clear time*/
 };
 
 
@@ -822,8 +822,8 @@ struct player_sex
 	cptr title;			/* Type of sex */
 	cptr winner;		/* Name of winner */
 #ifdef JP
-	cptr E_title;		/* ±Ñ¸ìÀ­ÊÌ */
-	cptr E_winner;		/* ±Ñ¸ìÀ­ÊÌ */
+	cptr E_title;		/* è‹±èªæ€§åˆ¥ */
+	cptr E_winner;		/* è‹±èªæ€§åˆ¥ */
 #endif
 };
 
@@ -839,7 +839,7 @@ struct player_race
 	cptr title;			/* Type of race */
 
 #ifdef JP
-	cptr E_title;		/* ±Ñ¸ì¼ïÂ² */
+	cptr E_title;		/* è‹±èªç¨®æ— */
 #endif
 	s16b r_adj[6];		/* Racial stat bonuses */
 
@@ -886,7 +886,7 @@ struct player_class
 	cptr title;			/* Type of class */
 
 #ifdef JP
-	cptr E_title;		/* ±Ñ¸ì¿¦¶È */
+	cptr E_title;		/* è‹±èªè·æ¥­ */
 #endif
 	s16b c_adj[6];		/* Class stat modifier */
 
@@ -921,7 +921,7 @@ struct player_seikaku
 	cptr title;			/* Type of seikaku */
 
 #ifdef JP
-	cptr E_title;		/* ±Ñ¸ìÀ­³Ê */
+	cptr E_title;		/* è‹±èªæ€§æ ¼ */
 #endif
 
 	s16b a_adj[6];		/* seikaku stat bonuses */
@@ -937,7 +937,7 @@ struct player_seikaku
 
 	s16b a_mhp;			/* Race hit-dice modifier */
 
-	byte no;			/* ¤Î */
+	byte no;			/* ã® */
 	byte sex;			/* seibetu seigen */
 };
 
@@ -1653,15 +1653,15 @@ struct dungeon_info_type {
 
 /*!
  * @struct autopick_type
- * @brief ¼«Æ°½¦¤¤/ÇË²õÀßÄê¥Ç¡¼¥¿¤Î¹½Â¤ÂÎ / A structure type for entry of auto-picker/destroyer
+ * @brief è‡ªå‹•æ‹¾ã„/ç ´å£Šè¨­å®šãƒ‡ãƒ¼ã‚¿ã®æ§‹é€ ä½“ / A structure type for entry of auto-picker/destroyer
  */
 typedef struct {
-	cptr name;          /*!< ¼«Æ°½¦¤¤/ÇË²õÄêµÁ¤ÎÌ¾¾Î°ìÃ×´ğ½à / Items which have 'name' as part of its name match */
-	cptr insc;          /*!< ÂĞ¾İ¤È¤Ê¤Ã¤¿¥¢¥¤¥Æ¥à¤Ë¼«Æ°¤Ç¹ï¤àÆâÍÆ / Items will be auto-inscribed as 'insc' */
-	u32b flag[2];       /*!< ¥­¡¼¥ï¡¼¥É¤Ë´Ø¤¹¤ëÈÆÍÑÅª¤Ê¾ò·ï¥Õ¥é¥° / Misc. keyword to be matched */
-	byte action;        /*!< ÂĞ¾İ¤Î¥¢¥¤¥Æ¥à¤ò½¦¤¦/ÇË²õ/ÊüÃÖ¤¹¤ë¤«¤Î»ØÄê¥Õ¥é¥° / Auto-pickup or Destroy or Leave items */
-	byte dice;          /*!< Éğ´ï¤Î¥À¥¤¥¹ÃÍ´ğ½àÃÍ / Weapons which have more than 'dice' dice match */
-	byte bonus;         /*!< ¥¢¥¤¥Æ¥à¤Î¥Ü¡¼¥Ê¥¹´ğ½àÃÍ / Items which have more than 'bonus' magical bonus match */
+	cptr name;          /*!< è‡ªå‹•æ‹¾ã„/ç ´å£Šå®šç¾©ã®åç§°ä¸€è‡´åŸºæº– / Items which have 'name' as part of its name match */
+	cptr insc;          /*!< å¯¾è±¡ã¨ãªã£ãŸã‚¢ã‚¤ãƒ†ãƒ ã«è‡ªå‹•ã§åˆ»ã‚€å†…å®¹ / Items will be auto-inscribed as 'insc' */
+	u32b flag[2];       /*!< ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰ã«é–¢ã™ã‚‹æ±ç”¨çš„ãªæ¡ä»¶ãƒ•ãƒ©ã‚° / Misc. keyword to be matched */
+	byte action;        /*!< å¯¾è±¡ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’æ‹¾ã†/ç ´å£Š/æ”¾ç½®ã™ã‚‹ã‹ã®æŒ‡å®šãƒ•ãƒ©ã‚° / Auto-pickup or Destroy or Leave items */
+	byte dice;          /*!< æ­¦å™¨ã®ãƒ€ã‚¤ã‚¹å€¤åŸºæº–å€¤ / Weapons which have more than 'dice' dice match */
+	byte bonus;         /*!< ã‚¢ã‚¤ãƒ†ãƒ ã®ãƒœãƒ¼ãƒŠã‚¹åŸºæº–å€¤ / Items which have more than 'bonus' magical bonus match */
 } autopick_type;
 
 
@@ -1695,13 +1695,13 @@ typedef struct
 
 /*!
  * @struct arena_type
- * @brief Æ®µ»¾ì¤Î¥â¥ó¥¹¥¿¡¼¥¨¥ó¥È¥ê¡¼¹½Â¤ÂÎ / A structure type for arena entry
+ * @brief é—˜æŠ€å ´ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚¨ãƒ³ãƒˆãƒªãƒ¼æ§‹é€ ä½“ / A structure type for arena entry
  */
 typedef struct
 {
-	s16b r_idx; /*!< Æ®µ»¾ì¤Î¥â¥ó¥¹¥¿¡¼¼ïÂ²ID(0¤Ê¤é¤ĞÉ½¾´¼°) / Monster (0 means victory prizing) */
-	byte tval;  /*!< ¥â¥ó¥¹¥¿¡¼ÂÇÅİ¸å¤ËÆÀ¤é¤ì¤ë¥¢¥¤¥Æ¥à¤ÎÂç¥«¥Æ¥´¥êID / tval of prize (0 means no prize) */
-	byte sval;  /*!< ¥â¥ó¥¹¥¿¡¼ÂÇÅİ¸å¤ËÆÀ¤é¤ì¤ë¥¢¥¤¥Æ¥à¤Î¾®¥«¥Æ¥´¥êID / sval of prize */
+	s16b r_idx; /*!< é—˜æŠ€å ´ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ç¨®æ—ID(0ãªã‚‰ã°è¡¨å½°å¼) / Monster (0 means victory prizing) */
+	byte tval;  /*!< ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼æ‰“å€’å¾Œã«å¾—ã‚‰ã‚Œã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã®å¤§ã‚«ãƒ†ã‚´ãƒªID / tval of prize (0 means no prize) */
+	byte sval;  /*!< ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼æ‰“å€’å¾Œã«å¾—ã‚‰ã‚Œã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã®å°ã‚«ãƒ†ã‚´ãƒªID / sval of prize */
 } arena_type;
 
 
