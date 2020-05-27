@@ -4673,12 +4673,12 @@ static cptr do_arcane_spell(int spell, int mode)
 	switch (spell)
 	{
 	case 0:
-		if (name) return _("石の矢", "Zap");
-		if (desc) return _("石のボルトもしくはビームを放つ。", "Fires a bolt or beam of lightning.");
+		if (name) return _("電撃", "Zap");
+		if (desc) return _("電撃のボルトもしくはビームを放つ。", "Fires a bolt or beam of lightning.");
     
 		{
 			int dice = 3 + (plev - 1) / 5;
-			int sides = 7;
+			int sides = 3;
 
 			if (info) return info_damage(dice, sides, 0);
 
@@ -4686,124 +4686,119 @@ static cptr do_arcane_spell(int spell, int mode)
 			{
 				if (!get_aim_dir(&dir)) return NULL;
 
-				fire_bolt_or_beam(beam_chance() - 10, GF_MISSILE, dir, damroll(dice, sides));
+				fire_bolt_or_beam(beam_chance() - 10, GF_ELEC, dir, damroll(dice, sides));
 			}
 		}
 		break;
 
 	case 1:
-		if (name) return _("岩石溶解", "Stone to Mud");
-		if (desc) return _("壁を溶かして床にする。", "Turns one rock square to mud.");
+		if (name) return _("魔法の施錠", "Wizard Lock");
+		if (desc) return _("扉に鍵をかける。", "Locks a door.");
     
 		{
-			int dice = 1;
-			int sides = 30;
-			int base = 20;
-
-			if (info) return info_damage(dice, sides, base);
-
 			if (cast)
 			{
 				if (!get_aim_dir(&dir)) return NULL;
 
-				wall_to_mud(dir, 20 + randint1(30));
+				wizard_lock(dir);
 			}
 		}
 		break;
 
 	case 2:
-		if (name) return _("岩石感知", "Magic Mapping");
-		if (desc) return _("周辺の地形を感知する。", "Maps nearby area.");
+		if (name) return _("透明体感知", "Detect Invisibility");
+		if (desc) return _("近くの透明なモンスターを感知する。", "Detects all invisible monsters in your vicinity.");
     
 		{
-			int rad = DETECT_RAD_MAP;
+			int rad = DETECT_RAD_DEFAULT;
 
 			if (info) return info_radius(rad);
 
 			if (cast)
 			{
-				map_area(rad);
+				detect_monsters_invis(rad);
 			}
 		}
 		break;
 
 	case 3:
-		if (name) return _("地震", "Earthquake");
-		if (desc) return _("周囲のダンジョンを揺らし、壁と床をランダムに入れ変える。", 
-			"Shakes dungeon structure, and results in random swapping of floors and walls.");
+		if (name) return _("モンスター感知", "Detect Monsters");
+		if (desc) return _("近くの全ての見えるモンスターを感知する。", "Detects all monsters in your vicinity unless invisible.");
     
 		{
-			int rad = 5;
+			int rad = DETECT_RAD_DEFAULT;
 
 			if (info) return info_radius(rad);
 
 			if (cast)
 			{
-				earthquake(p_ptr->y, p_ptr->x, rad);
+				detect_monsters_normal(rad);
 			}
 		}
 		break;
 
 	case 4:
-		if (name) return _("石の槍", "Zap");
-		if (desc) return _("石のビームを放つ。", "Fires a bolt or beam of lightning.");
+		if (name) return _("ショート・テレポート", "Blink");
+		if (desc) return _("近距離のテレポートをする。", "Teleport short distance.");
     
 		{
-			int dice = 11 + (plev - 5) / 4;
-			int sides = 8;
+			int range = 10;
 
-			if (info) return info_damage(dice, sides, 0);
+			if (info) return info_range(range);
 
 			if (cast)
 			{
-				if (!get_aim_dir(&dir)) return NULL;
-
-				fire_beam(GF_MISSILE, dir, damroll(dice, sides));
+				teleport_player(range, 0L);
 			}
 		}
 		break;
 
 	case 5:
-		if (name) return _("石の壁", "Wall of Stone");
-		if (desc) return _("自分の周囲に花崗岩の壁を作る。", "Creates granite walls in all adjacent squares.");
+		if (name) return _("ライト・エリア", "Light Area");
+		if (desc) return _("光源が照らしている範囲か部屋全体を永久に明るくする。", "Lights up nearby area and the inside of a room permanently.");
     
 		{
+			int dice = 2;
+			int sides = plev / 2;
+			int rad = plev / 10 + 1;
+
+			if (info) return info_damage(dice, sides, 0);
+
 			if (cast)
 			{
-				wall_stone();
+				lite_area(damroll(dice, sides), rad);
 			}
 		}
 		break;
 
 	case 6:
-		if (name) return _("壁抜け", "Walk through Wall");
-		if (desc) return _("一定時間、半物質化し壁を通り抜けられるようになる。", "Gives ability to pass walls for a while.");
+		if (name) return _("罠と扉 破壊", "Trap & Door Destruction");
+		if (desc) return _("一直線上の全ての罠と扉を破壊する。", "Fires a beam which destroy traps and doors.");
     
 		{
-			int base = plev / 2;
-
-			if (info) return info_duration(base, base);
-
 			if (cast)
 			{
-				set_kabenuke(randint1(base) + base, FALSE);
+				if (!get_aim_dir(&dir)) return NULL;
+
+				destroy_door(dir);
 			}
 		}
 		break;
 
 	case 7:
-		if (name) return _("隕石", "Wrath of the God");
-		if (desc) return _("ターゲットの周囲に隕石を多数落とす。", "Drops many balls of disintegration near the target.");
+		if (name) return _("軽傷の治癒", "Cure Light Wounds");
+		if (desc) return _("怪我と体力を少し回復させる。", "Heals cut and HP a little.");
     
 		{
-			int dam = plev * 3 + 25;
-			int rad = 1;
+			int dice = 2;
+			int sides = 8;
 
-			if (info) return info_multi_damage(dam);
+			if (info) return info_heal(dice, sides, 0);
 
 			if (cast)
 			{
-				if (!cast_wrath_of_the_god(dam, rad)) return NULL;
+				hp_player(damroll(dice, sides));
+				set_cut(p_ptr->cut - 10);
 			}
 		}
 		break;
