@@ -5026,7 +5026,7 @@ F:IGNORE_ACID | IGNORE_ELEC | IGNORE_FIRE | IGNORE_COLD
 # Arcane Spellbooks
 
 #JZ#
-N:516:[初心者教本]
+N:516:[石の魔術]
 E:[Cantrips for Beginners]
 G:?:s
 I:96:0:0
@@ -5039,8 +5039,8 @@ N:517:[小秘術]
 E:[Minor Arcana]
 G:?:s
 I:96:1:0
-W:15:0:30:250
-A:15/1
+W:100:0:30:250
+A:100/1
 P:0:1d1:0:0:0
 
 #JZ#
@@ -5048,8 +5048,8 @@ N:518:[大秘術]
 E:[Major Arcana]
 G:?:s
 I:96:2:0
-W:20:0:30:1000
-A:20/1
+W:100:0:30:1000
+A:100/1
 P:0:1d1:0:0:0
 
 #JZ#
@@ -5057,8 +5057,8 @@ N:519:[秘術大全]
 E:[Manual of Mastery]
 G:?:s
 I:96:3:0
-W:25:0:30:2500
-A:25/1
+W:100:0:30:2500
+A:100/1
 P:0:1d1:0:0:0
 
 #JZ#
